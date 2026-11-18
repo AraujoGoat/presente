@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2bbfb3">
+  <meta name="robots" content="noindex, nofollow">
+  <title>♡ nosso cantinho</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%237b1e3a' d='M2 3h4v1h4V3h4v4h-1v2h-1v2h-1v1h-1v1h-1v1H7v-1H6v-1H5v-1H4V9H3V7H2z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="bg" aria-hidden="true"></div>
+
+  <!-- Carta de abertura -->
+  <div id="intro" role="button" tabindex="0" aria-label="Abrir carta">
+    <div class="env">
+      <div class="env-back"></div>
+      <div class="env-letter"><span id="introPara"></span><small>↑ abrindo...</small></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="env-seal" id="introSelo">♥</div>
+    </div>
+    <p class="intro-hint" id="introDica"></p>
+  </div>
+
+  <!-- Janela principal -->
+  <main id="stage" hidden>
+    <section class="card" id="card" aria-label="Nosso cantinho">
+      <header class="titlebar">
+        <span class="tb-ico">♥</span>
+        <span class="tb-name" id="tbName"></span>
+        <span class="tb-btns">
+          <button class="wbtn" id="btnMin" title="recolher" aria-label="recolher">–</button>
+          <button class="wbtn" id="btnHeart" title="carinho" aria-label="carinho">♥</button>
+          <button class="wbtn" id="btnX" title="fechar" aria-label="fechar">×</button>
+        </span>
+      </header>
+      <nav class="menubar" id="menubar" aria-label="Menu"></nav>
+      <div class="card-body" id="cardBody"></div>
+    </section>
+  </main>
+
+  <div id="windows"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/content.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
