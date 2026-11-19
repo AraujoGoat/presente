@@ -49,6 +49,7 @@ window.CONTENT = {
     { id: "linha",    rotulo: "nossa linha", icone: "🗓️" },
     { id: "gostos",   rotulo: "gostos",  icone: "🎮" },
     { id: "musicas",  rotulo: "músicas", icone: "🎵" },
+    { id: "extras",   rotulo: "extras",  icone: "🎁" },
     { id: "cartinha", rotulo: "segredo", icone: "🔐" }
   ],
 
@@ -60,6 +61,8 @@ window.CONTENT = {
     { id: "linha",   rotulo: "nossa linha do tempo", icone: "🗓️", cor: "turq" },
     { id: "gostos",  rotulo: "seus gostos",     icone: "🎮", cor: "turq"  },
     { id: "musicas", rotulo: "playlist",        icone: "🎵", cor: "azul"  },
+    { id: "extras",  rotulo: "extras & jogos",  icone: "🎁", cor: "vinho" },
+    { id: "cartinha",rotulo: "cartinha secreta",icone: "🔐", cor: "branco"},
     { id: "sobre",   rotulo: "nossa história",  icone: "📖", cor: "rosa"  }
   ],
 
@@ -264,6 +267,80 @@ window.CONTENT = {
         resumo: "Música é o seu jeito de sentir o mundo. Clique pra ver sua playlist." }
     ],
     musicos: ["Melanie Martinez", "Alex G", "Beabadoobee"]
+  },
+
+
+  /* =====================================================================
+     PRAIA (pixel art do final do site)
+     ===================================================================== */
+  praia: {
+    titulo: "nossa praia",
+    legenda: "nós dois, de mãos dadas, até o fim",
+    dica: "toque no sol ou na lua pra mudar a hora do dia"
+  },
+
+  /* =====================================================================
+     CARTINHA SECRETA
+     liberaEm: data/hora em que ela pode abrir ("" = sempre aberta)
+     senha:    ("" = sem senha)
+     Para VOCÊ testar antes da data: coloque #teste no fim do link
+     (ex: seusite.github.io/presente/#teste)
+     ===================================================================== */
+  segredo: {
+    liberaEm: "2027-03-14T00:00:00",
+    senha: "",
+    dica: "só abre quando a gente completar 3 anos 💍",
+    titulo: "cartinha secreta",
+    texto: "Mari,\n\nSe você está lendo isto, é porque a gente chegou até aqui. Três anos, e eu continuo achando que tive muita sorte.\n\nEu guardei esta carta pra hoje porque algumas coisas merecem esperar o momento certo.\n\nObrigado por cada risada, por cada madrugada de jogo, por cada abraço que consertou o dia. Prometo continuar tentando ser o melhor parceiro que você poderia ter, na vida real e em qualquer fase de qualquer jogo.\n\nSe um dia o mundo acabar, eu escolho você primeiro.\n\nTe amo.\nGui",
+    assinatura: "com amor, Gui ♥"
+  },
+
+  /* =====================================================================
+     EXTRAS: cupons, quiz, mural e easter eggs
+     ===================================================================== */
+  cupons: [
+    { id: "k1", icone: "🍕", titulo: "Jantar onde você quiser", descricao: "Você escolhe o lugar, eu pago (e não reclamo do tempo de espera)." },
+    { id: "k2", icone: "🎬", titulo: "Maratona sem reclamar", descricao: "Valendo qualquer série ou filme, até os que eu já vi." },
+    { id: "k3", icone: "🎮", titulo: "Dia de jogo: você manda", descricao: "Você escolhe o jogo, eu jogo com alegria." },
+    { id: "k4", icone: "☕", titulo: "Café da manhã especial", descricao: "Com direito a bilhetinho." },
+    { id: "k5", icone: "🫂", titulo: "Abraço de 10 minutos", descricao: "Sem soltar e sem olhar o celular." },
+    { id: "k6", icone: "🌹", titulo: "Um encontro surpresa", descricao: "Eu planejo tudo. Você só aparece." }
+  ],
+
+  quiz: {
+    titulo: "o quanto você me conhece?",
+    perguntas: [
+      { p: "Qual é a data do nosso começo?", op: ["14/03/2024", "14/04/2024", "14/02/2024", "14/03/2023"], certa: 0, extra: "O dia mais importante do calendário." },
+      { p: "Onde foi o nosso primeiro rolê?", op: ["No cinema", "Num parque", "Na casa de um amigo", "Numa lanchonete"], certa: 1, extra: "(troque as opções e a resposta certa por coisas de vocês)" },
+      { p: "Qual é a minha comida favorita?", op: ["Pizza", "Hambúrguer", "Lasanha", "Sushi"], certa: 0, extra: "Quem nunca?" },
+      { p: "Quem sempre diz 'só mais uma partida'?", op: ["Eu", "Você", "Os dois", "Ninguém, a gente mente"], certa: 2, extra: "Os dois, sempre." },
+      { p: "Qual é a nossa série preferida pra maratonar?", op: ["Arcane", "South Park", "Uma de anime", "Todas acima"], certa: 3, extra: "A lista é grande." },
+      { p: "O que eu mais gosto em você?", op: ["Seu sorriso", "Seu humor", "Seu jeito de cuidar", "Tudo isso e mais"], certa: 3, extra: "Não tem resposta errada, mas essa é a certa." }
+    ],
+    finais: [
+      { min: 0,    msg: "Hmm... a gente precisa conversar mais. 😅 (brincadeira! eu te amo igual)" },
+      { min: 0.5,  msg: "Boa! Você me conhece bem. ♡" },
+      { min: 0.85, msg: "QUASE perfeito! Você presta atenção em mim. 💘" },
+      { min: 1,    msg: "PERFEITO! Você me conhece até demais. Eu te amo! 💖" }
+    ]
+  },
+
+  mural: [
+    { autor: "Gui",          cor: "rosa", texto: "Você é o meu lugar favorito." },
+    { autor: "Seus amigos",  cor: "turq", texto: "Vocês dois juntos são hilários!" },
+    { autor: "Gui",          cor: "creme",texto: "Lembra de beber água hoje! 💧" },
+    { autor: "Futuro nós",   cor: "azul", texto: "Obrigado por não desistirem um do outro." },
+    { autor: "Gui",          cor: "rosa", texto: "Se tiver um dia ruim, me chama." },
+    { autor: "Sua família",  cor: "turq", texto: "Ele cuida bem de você. Aprovado!" }
+  ],
+
+  eggs: {
+    konami: { titulo: "você achou um segredo!", texto: "Só quem ama jogo de verdade conhece esse código. 🎮\nPrêmio: um beijo surpresa, a qualquer momento que você quiser." },
+    toqueTitulo: { titulo: "ei, você tá curiosa!", texto: "Tocar sete vezes no coração tem recompensa: eu te amo mais um pouco hoje. ♥" },
+    falas: {
+      ele: ["oi, sou eu!", "esse é o Gui!", "me dá um abraço?"],
+      ela: ["oi, amor!", "essa é a minha namorada favorita", "💗"]
+    }
   },
 
   /* =====================================================================
