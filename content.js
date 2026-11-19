@@ -128,39 +128,18 @@ window.CONTENT = {
   },
   "poemas": [
     {
-      "id": "p1",
-      "titulo": "Constelação",
-      "data": "2024-04-20",
-      "humor": "✨",
-      "texto": "Eu já contei as estrelas\nmais de mil vezes,\nmas só aprendi a olhar pra cima\ndepois de você.\n\nHoje o céu é só detalhe:\nminha constelação favorita\nfica do meu lado\ne ri das minhas piadas ruins."
+      "id": "pmwo6x8wks1i",
+      "titulo": "Mar",
+      "data": "2026-11-13",
+      "humor": "🌊",
+      "texto": "Você é como as ondas do mar, Às vezes tranquilas, outras prontas a se agitar. Tem dias em que transmite paz e calmaria, E outros em que carrega uma tempestade consigo durante o dia.\n\nMas nem por isso deixa de ser bonita, Pois até na tua intensidade existe algo que me cativa. Não precisas estar sempre bem para me encantar, Assim como o mar não precisa estar calmo para ser lindo de admirar.\n\nAfinal, o que seria do mar sem suas ondas? Ou do céu se não existissem estrelas tão belas e profundas? Cada maré tem seu jeito, sua força e seu valor, E em todas elas encontro mais motivos para te admirar com amor."
     },
     {
-      "id": "p2",
-      "titulo": "Save Point",
-      "data": "2024-07-02",
-      "humor": "🎮",
-      "texto": "Tem gente que é fase difícil,\ntem gente que é boss final.\nVocê é o lugar onde eu salvo o jogo,\nrespiro fundo\ne lembro que dá pra continuar.\n\nObrigado por ser\no meu recomeço\nsem eu precisar morrer antes."
-    },
-    {
-      "id": "p3",
-      "titulo": "Chuva de Domingo",
-      "data": "2024-09-15",
-      "humor": "🌧️",
-      "texto": "Domingo de chuva,\ncobertor demais,\nfilme escolhido em quarenta minutos\ne nenhum de nós assistiu.\n\nÀs vezes a felicidade\né só isso:\num dia lento\nem boa companhia."
-    },
-    {
-      "id": "p4",
-      "titulo": "Pequenos Monstros",
-      "data": "2025-01-10",
-      "humor": "🧟",
-      "texto": "O mundo tem seus monstros,\nmas eu aprendi\nque do seu lado\neles ficam pequenos.\n\nVocê segura minha mão\ncomo quem sabe\nque coragem também\né dividir o medo."
-    },
-    {
-      "id": "p5",
-      "titulo": "Trilha Sonora",
-      "data": "2025-03-14",
-      "humor": "🎧",
-      "texto": "Se a nossa história\ntivesse uma trilha,\nseria meio triste,\nmeio doce,\ncom um refrão que gruda.\n\nE toda vez que ela tocasse\neu ia lembrar\nde você rindo\ncom o fone na orelha."
+      "id": "pmwo72bro2xk",
+      "titulo": "Novo poema",
+      "data": "2026-11-19",
+      "humor": "💗",
+      "texto": ""
     }
   ],
   "galeria": {
