@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>painel · nosso cantinho</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#3d7be0;--turq:#2bbfb3;--vinho:#7b1e3a;--rosa:#ffc2d4;--branco:#fffaf7;--tinta:#4a1730;
+ --azul-claro:#dbe8fb;--turq-claro:#d5f2ef;--rosa-claro:#fff0f4;--vinho-escuro:#4e1124;
+ --ui:'Pixelify Sans','Courier New',monospace;--txt:'Nunito','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--txt);color:var(--tinta);background:linear-gradient(160deg,var(--turq-claro),var(--azul-claro) 55%,var(--rosa-claro));background-attachment:fixed;min-height:100vh;padding-bottom:96px;-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+header.topo{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(90deg,var(--azul),var(--turq));color:#fff;border-bottom:3px solid var(--vinho);font-family:var(--ui);font-size:19px}
+header.topo h1{font-size:19px;flex:1;font-weight:600;text-shadow:1px 1px 0 rgba(74,23,48,.5)}
+.wrap{max-width:760px;margin:0 auto;padding:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 16px;border-radius:14px;font-family:var(--ui);font-size:16px;color:#fff;border:3px solid var(--vinho);box-shadow:0 4px 0 var(--vinho);background:var(--azul);transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--vinho)}
+.btn.turq{background:var(--turq)}.btn.rosa{background:var(--rosa);color:var(--vinho)}.btn.vinho{background:var(--vinho)}.btn.branco{background:#fff;color:var(--vinho)}
+.btn[disabled]{opacity:.55;pointer-events:none}
+.mini{padding:4px 10px;border-radius:999px;font-family:var(--ui);font-size:14px;background:#fff;color:var(--vinho);border:2px solid var(--vinho);box-shadow:0 2px 0 var(--vinho)}
+.mini:active{transform:translateY(2px);box-shadow:none}
+.mini.perigo{background:var(--rosa);}
+.aviso{padding:12px 14px;border-radius:14px;border:3px solid var(--vinho);background:#fff;margin-bottom:12px;font-weight:700;font-size:14.5px;line-height:1.5}
+.aviso.ok{background:var(--turq-claro)}.aviso.rosa{background:var(--rosa-claro)}
+.aviso b{color:var(--vinho)}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.sec{display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 8px;border-radius:16px;background:#fff;border:3px solid var(--vinho);box-shadow:0 4px 0 var(--vinho);font-family:var(--ui);font-size:16px;color:var(--vinho);text-align:center}
+.sec span{font-size:30px}
+.sec:active{transform:translateY(3px);box-shadow:none}
+.sec small{font-family:var(--txt);font-weight:700;font-size:12px;opacity:.65}
+h2.tit{font-family:var(--ui);font-size:24px;color:var(--vinho);margin:4px 0 12px}
+.voltar{margin-bottom:10px}
+.f{margin-bottom:12px}
+.f>label,legend{display:block;font-weight:800;font-size:13.5px;color:var(--vinho);margin-bottom:4px}
+.f small.dica{display:block;font-weight:700;font-size:12px;opacity:.65;margin-top:3px}
+input[type=text],input[type=date],input[type=datetime-local],select,textarea{width:100%;padding:9px 12px;border-radius:12px;border:2px solid var(--vinho);background:#fff;outline:none;font-weight:600;font-size:15.5px}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px var(--turq-claro);border-color:var(--azul)}
+textarea{resize:vertical;min-height:70px;line-height:1.5}
+input[type=color]{width:100%;height:42px;border-radius:12px;border:2px solid var(--vinho);background:#fff;padding:2px}
+fieldset{border:3px solid var(--vinho);border-radius:16px;padding:12px 12px 4px;margin-bottom:14px;background:#ffffffaa}
+legend{padding:0 8px;font-family:var(--ui);font-size:16px}
+.item{border:3px solid var(--vinho);border-radius:14px;background:#fff;margin-bottom:10px;overflow:hidden}
+.item>summary{list-style:none;display:flex;align-items:center;gap:8px;padding:9px 10px;background:var(--rosa-claro);font-weight:800;cursor:pointer}
+.item>summary::-webkit-details-marker{display:none}
+.item>summary .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item>summary .n{font-family:var(--ui);color:var(--azul);font-size:13px}
+.item[open]>summary{border-bottom:3px solid var(--vinho);background:var(--turq-claro)}
+.item .corpo{padding:12px 12px 2px}
+.ctrl{display:flex;gap:5px}
+.strrow{display:flex;gap:6px;align-items:flex-start;margin-bottom:8px}
+.strrow textarea{min-height:44px;flex:1}
+.strrow .ctrl{flex-direction:column}
+.midia{display:flex;gap:8px;align-items:center}
+.midia input[type=text]{flex:1;min-width:0}
+.midia img{width:46px;height:46px;object-fit:cover;border-radius:8px;border:2px solid var(--vinho)}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;padding:10px;background:#fff;border-top:3px solid var(--vinho)}
+.barra .st{width:100%;text-align:center;font-weight:800;font-size:12.5px;color:var(--vinho)}
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;background:rgba(74,23,48,.55)}
+.modal.on{display:flex}
+.modal .cx{width:100%;max-width:640px;max-height:92vh;overflow:auto;background:var(--branco);border:3px solid var(--vinho);border-bottom:0;border-radius:22px 22px 0 0;padding:16px}
+.modal h3{font-family:var(--ui);font-size:22px;color:var(--vinho);margin-bottom:10px}
+.modal ol{padding-left:20px;line-height:1.6;font-weight:600;font-size:14.5px;margin-bottom:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+#toast{position:fixed;left:50%;bottom:110px;transform:translate(-50%,200px);max-width:92vw;background:var(--vinho);color:var(--rosa);padding:10px 16px;border-radius:14px;border:3px solid #fff;font-family:var(--ui);font-size:15px;text-align:center;z-index:99;transition:transform .3s;pointer-events:none}
+#toast.on{transform:translate(-50%,0)}
+code{background:#fff;border:1.5px solid var(--vinho);border-radius:6px;padding:0 5px;font-size:.92em;word-break:break-all}
+
+.chk{display:inline-flex;align-items:center;gap:8px;margin:0 14px 12px 0;padding:6px 12px;border-radius:999px;border:2px solid var(--vinho);background:#fff;font-weight:800;font-size:14px;color:var(--vinho)}
+.chk input{width:18px;height:18px;accent-color:var(--turq)}
+.prev-av{width:132px;height:132px;border-radius:50%;overflow:hidden;border:3px solid var(--vinho);background:var(--azul-claro);box-shadow:3px 3px 0 var(--vinho)}
+.prev-av canvas{width:100%;height:100%;image-rendering:pixelated;display:block;cursor:pointer}
+
+</style>
+</head>
+<body>
+<header class="topo"><h1>♥ painel do cantinho</h1><button class="mini" id="bCon">🔑 conexão</button></header>
+<div class="wrap"><div id="main"></div></div>
+<div class="barra">
+  <div class="st" id="st">carregando...</div>
+  <button class="btn rosa" id="bPrev">👁 prévia</button>
+  <button class="btn turq" id="bPub">💾 publicar</button>
+</div>
+<div class="modal" id="modal"><div class="cx">
+  <h3>🔑 conexão com o GitHub</h3>
+  <div class="aviso">Isso é feito <b>uma vez só</b>. O token fica guardado <b>apenas neste aparelho</b> (nunca vai pro site). Sem ele, ninguém consegue alterar nada, nem a Mari.</div>
+  <ol>
+    <li>No GitHub (pelo navegador), abra <b>Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token</b>.</li>
+    <li>Dê um nome (ex: painel), escolha o prazo (ex: 1 ano) e em <b>Repository access</b> marque <b>Only select repositories</b> e escolha o repositório do presente.</li>
+    <li>Em <b>Permissions → Repository permissions</b>, ache <b>Contents</b> e coloque <b>Read and write</b>.</li>
+    <li>Toque em <b>Generate token</b>, copie o código (começa com <code>github_pat_</code>) e cole abaixo.</li>
+  </ol>
+  <div class="f"><label>Usuário do GitHub</label><input type="text" id="cOwner" autocomplete="off"></div>
+  <div class="f"><label>Nome do repositório</label><input type="text" id="cRepo" autocomplete="off"></div>
+  <div class="f"><label>Branch</label><input type="text" id="cBranch" autocomplete="off"></div>
+  <div class="f"><label>Token</label><input type="text" id="cToken" autocomplete="off" placeholder="github_pat_..."></div>
+  <div class="row">
+    <button class="btn turq" id="cSalvar">salvar</button>
+    <button class="btn rosa" id="cTestar">testar</button>
+    <button class="btn branco" id="cSair">esquecer token</button>
+    <button class="btn branco" id="cFechar">fechar</button>
+  </div>
+</div></div>
+<div id="toast" role="status"></div>
+<script>
+/* ===== Avatares pixel (32x32): cabelo, rosto, acessórios, piscar e reação ao toque ===== */
+const PixelAvatar = (() => {
+  const S = 32;
+  const ESTILOS = ['curto', 'longo', 'rabo', 'coque', 'cacheado'];
+  const hex = h => [1, 3, 5].map(i => parseInt(String(h || '#000000').slice(i, i + 2), 16) || 0);
+  const toHex = a => '#' + a.map(v => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('');
+  const mix = (a, b, k) => { const A = hex(a), B = hex(b); return toHex(A.map((v, i) => v + (B[i] - v) * k)); };
+  const sombra = (c, k = .28) => mix(c, '#3a1020', k);
+  const luz = (c, k = .3) => mix(c, '#ffffff', k);
+
+  /* valores padrão: o que faltar na configuração é completado aqui */
+  function padrao(qual, c = {}){
+    const ela = qual === 'ela';
+    return {
+      pele: c.pele || '#f6c9a8', cabelo: c.cabelo || (ela ? '#7b1e3a' : '#3a2a5a'), roupa: c.roupa || (ela ? '#2bbfb3' : '#3d7be0'),
+      olhos: c.olhos || '#2a1220', laco: c.laco || '#ff8fb1',
+      estilo: ESTILOS.includes(c.estilo) ? c.estilo : (ela ? 'longo' : 'curto'),
+      acessorio: c.acessorio !== undefined ? c.acessorio : (ela ? 'laco' : 'nenhum'),
+      oculos: !!c.oculos, barba: !!c.barba, sardas: !!c.sardas, brinco: !!c.brinco
+    };
+  }
+
+  function desenhar(g, P, est){
+    const dy = est.dy || 0;
+    const R = (x, y, w, h, c) => { g.fillStyle = c; g.fillRect(x, y, w, h); };
+    const p = (x, y, c) => R(x, y, 1, 1, c);
+    const E = (cx, cy, rx, ry, cor) => {
+      for (let y = Math.floor(cy - ry); y <= Math.ceil(cy + ry); y++) for (let x = Math.floor(cx - rx); x <= Math.ceil(cx + rx); x++){
+        const nx = (x + .5 - cx) / rx, ny = (y + .5 - cy) / ry;
+        if (nx * nx + ny * ny <= 1){ const c = typeof cor === 'function' ? cor(x, y) : cor; if (c) p(x, y, c); }
+      }
+    };
+    const pele = P.pele, peleS = sombra(P.pele, .22), peleSS = sombra(P.pele, .4);
+    const hc = P.cabelo, hS = sombra(hc, .38), hL = luz(hc, .28);
+    const roupa = P.roupa, roupaS = sombra(roupa, .25), roupaL = luz(roupa, .22);
+    const cx = 16, cy = 14 + dy, rx = 7.5, ry = 8.6;
+    const pel = (x, y) => (x - cx > 4.6 || y > cy + ry - 2.4) ? peleS : pele;
+    const cab = (x, y) => (x * 3 + y * 5) % 8 === 0 ? hL : ((x - cx > 5 || y > cy + 6) ? hS : hc);
+    const st = P.estilo;
+
+    /* 1. cabelo de trás (atrás da cabeça e dos ombros) */
+    if (st === 'longo') E(cx, cy + 5, rx + 2.6, ry + 3.6, cab);
+    if (st === 'rabo'){ E(cx + 9.5, cy - 1, 2.4, 4.8, cab); E(cx + 10.5, cy + 6, 1.9, 4.4, cab); R(cx + 8, cy - 4, 3, 2, P.laco); }
+    if (st === 'cacheado') E(cx, cy - .5, 11.2, 11.4, (x, y) => ((x * 7 + y * 3) % 5 === 0 ? hL : ((x + y) % 4 === 0 ? hS : hc)));
+
+    /* 2. pescoço e roupa */
+    R(14, 21, 4, 5, peleS);
+    for (let y = 25; y <= 31; y++){
+      const hw = Math.min(14.5, 6.2 + (y - 25) * 1.6), x0 = Math.round(16 - hw), x1 = Math.round(16 + hw);
+      for (let x = x0; x < x1; x++) p(x, y, (x >= x1 - 3 ? roupaS : (x <= x0 + 1 ? roupaL : roupa)));
+    }
+    p(14, 25, peleS); p(15, 25, peleS); p(16, 25, peleS); p(17, 25, peleS); p(15, 26, peleS); p(16, 26, peleS);
+    p(13, 25, roupaS); p(18, 25, roupaS); p(14, 26, roupaS); p(17, 26, roupaS);
+    for (let y = 28; y <= 31; y++) p(10, y, roupaS);
+
+    /* 3. cabelo comprido caindo na frente dos ombros */
+    if (st === 'longo'){ for (let y = 17; y <= 27; y++){ R(7, y, 3, 1, cab(7, y)); R(22, y, 3, 1, cab(22, y)); } }
+
+    /* 4. cabeça + orelhas */
+    p(8, cy + 2, peleS); p(8, cy + 3, peleS); p(23, cy + 2, peleS); p(23, cy + 3, peleS);
+    E(cx, cy, rx, ry, pel);
+
+    /* 5. barba */
+    if (P.barba){
+      E(cx, cy, rx, ry, (x, y) => (y > cy + 2.4 && !(y >= 19 + dy && y <= 20 + dy && x >= 14 && x <= 18)) ? (y > cy + 5 ? hS : hc) : null);
+      R(14, 18 + dy, 5, 1, hS);
+    }
+
+    /* 6. cabelo da frente */
+    const topo = (extra = 0) => {
+      for (let y = Math.floor(cy - ry - 2); y <= cy + 4; y++) for (let x = 6; x <= 26; x++){
+        const nx = (x + .5 - cx) / (rx + 1.4), ny = (y + .5 - (cy - 1.1)) / (ry + 1.1);
+        if (nx * nx + ny * ny > 1) continue;
+        const franja = Math.max(cy - 5, Math.min(cy - 2.5, cy - 3.5 + .22 * (x - cx))) + (x % 3 === 0 ? 1 : 0) + extra;
+        const lateral = Math.abs(x + .5 - cx) >= 6.2 && y < cy + 1.5;
+        if (y < franja || lateral) p(x, y, cab(x, y));
+      }
+    };
+    if (st === 'cacheado'){
+      [[-5, -7.5], [-1.5, -9], [2.5, -8.8], [6, -6.8]].forEach(([dx, dyy]) => E(cx + dx, cy + dyy + 1.4, 3.1, 2.8, cab));
+      E(cx - 8, cy - 1, 2, 3.5, cab); E(cx + 8, cy - 1, 2, 3.5, cab);
+    } else topo();
+    if (st === 'coque'){ E(cx, cy - ry - 1.8, 3.8, 3.3, cab); R(cx - 3, cy - ry + .3, 7, 1, P.laco); }
+
+    /* 7. rosto */
+    const happy = est.feliz;
+    const olho = (ex, ey) => {
+      if (happy){ p(ex, ey + 1, P.olhos); p(ex + 1, ey, P.olhos); p(ex - 1, ey, P.olhos); return; }
+      if (est.piscar){ R(ex - .0, ey + 1, 2, 1, P.olhos); return; }
+      R(ex, ey, 2, 3, P.olhos); p(ex, ey, '#ffffff');
+    };
+    // sobrancelhas
+    const sb = P.estilo === 'cacheado' ? hS : hS;
+    R(10, 11 + dy, 4, 1, sb); R(19, 11 + dy, 4, 1, sb);
+    // óculos (por baixo dos olhos)
+    if (P.oculos){
+      const fr = '#3a1020';
+      [[9, 12], [18, 12]].forEach(([x, y]) => {
+        R(x + 1, y + dy, 4, 1, fr); R(x + 1, y + 5 + dy, 4, 1, fr); R(x, y + 1 + dy, 1, 4, fr); R(x + 5, y + 1 + dy, 1, 4, fr);
+        R(x + 1, y + 1 + dy, 4, 4, luz(pele, .35));
+      });
+      R(14, 14 + dy, 4, 1, fr);
+    }
+    olho(11, 14 + dy); olho(20, 14 + dy);
+    // bochechas, nariz, sardas
+    g.globalAlpha = .65; R(10, 18 + dy, 2, 1, '#ff8fa8'); R(21, 18 + dy, 2, 1, '#ff8fa8'); g.globalAlpha = 1;
+    p(16, 17 + dy, peleSS);
+    if (P.sardas){ [[11, 17], [13, 18], [19, 18], [21, 17], [12, 19], [20, 19]].forEach(([x, y]) => p(x, y + dy, peleSS)); }
+    // boca
+    if (happy){ R(14, 19 + dy, 5, 2, '#7a1f3a'); R(15, 20 + dy, 3, 1, '#ff8fa8'); }
+    else { p(14, 19 + dy, '#a6334f'); p(15, 20 + dy, '#a6334f'); p(16, 20 + dy, '#a6334f'); p(17, 20 + dy, '#a6334f'); p(18, 19 + dy, '#a6334f'); }
+
+    /* 8. acessórios */
+    const a = P.acessorio;
+    if (a === 'laco'){
+      const x = 21, y = 4 + dy;
+      R(x, y, 3, 3, P.laco); R(x + 5, y, 3, 3, P.laco); R(x + 3, y + 1, 2, 2, sombra(P.laco, .25));
+      p(x, y, luz(P.laco, .4)); p(x + 5, y, luz(P.laco, .4));
+    }
+    if (a === 'bone'){
+      E(cx, cy - 2, rx + 1.6, ry + .6, (x, y) => y < cy - 4 ? (x - cx > 4 ? roupaS : roupa) : null);
+      R(6, cy - 4, 20, 2, roupaS); R(5, cy - 3, 22, 1, sombra(roupa, .45));
+      p(cx - 1, cy - 7, '#ffffff'); p(cx, cy - 7, '#ffffff');
+    }
+    if (a === 'fone'){
+      const fc = P.laco && a === 'fone' ? '#2bbfb3' : '#2bbfb3';
+      for (let ang = 180; ang <= 360; ang += 6){ const r = ang * Math.PI / 180; R(Math.round(cx + Math.cos(r) * 10), Math.round(cy - 1 + Math.sin(r) * 10.5), 2, 2, fc); }
+      R(5, cy + 1, 3, 6, '#ffc2d4'); R(24, cy + 1, 3, 6, '#ffc2d4'); R(5, cy + 1, 1, 6, fc); R(26, cy + 1, 1, 6, fc);
+    }
+    if (P.brinco){ p(8, cy + 5, '#ffd23f'); p(8, cy + 6, '#ffd23f'); p(23, cy + 5, '#ffd23f'); p(23, cy + 6, '#ffd23f'); }
+  }
+
+  /* contorno escuro automático */
+  function contorno(g, cor){
+    const d = g.getImageData(0, 0, S, S), px = d.data, al = (i, j) => (i < 0 || j < 0 || i >= S || j >= S) ? 0 : px[(j * S + i) * 4 + 3];
+    const out = g.createImageData(S, S); out.data.set(px);
+    const [r, gg, b] = hex(cor);
+    for (let j = 0; j < S; j++) for (let i = 0; i < S; i++){
+      if (al(i, j) < 128 && (al(i + 1, j) || al(i - 1, j) || al(i, j + 1) || al(i, j - 1))){
+        const o = (j * S + i) * 4; out.data[o] = r; out.data[o + 1] = gg; out.data[o + 2] = b; out.data[o + 3] = 255;
+      }
+    }
+    g.putImageData(out, 0, 0);
+  }
+
+  /* cria um canvas animado; ele para sozinho quando sai da tela */
+  function criar(qual, cfg){
+    const P = padrao(qual, cfg);
+    const c = document.createElement('canvas'); c.width = c.height = S;
+    const g = c.getContext('2d');
+    const est = { piscar: false, feliz: false, dy: 0 };
+    let felizAte = 0, visto = false;
+    const pinta = () => {
+      g.clearRect(0, 0, S, S); desenhar(g, P, est); contorno(g, '#4e1124');
+    };
+    pinta();
+    c.animarFeliz = () => { felizAte = performance.now() + 1100; est.feliz = true; pinta(); };
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return c;
+    let proxPiscada = performance.now() + 1500 + Math.random() * 2500, fimPiscada = 0, proxBob = performance.now() + 700;
+    const t = setInterval(() => {
+      if (c.isConnected) visto = true; else if (visto){ clearInterval(t); return; } else return;
+      const agora = performance.now(); let mudou = false;
+      if (est.feliz && agora > felizAte){ est.feliz = false; mudou = true; }
+      if (!est.piscar && agora > proxPiscada){ est.piscar = true; fimPiscada = agora + 130; mudou = true; }
+      if (est.piscar && agora > fimPiscada){ est.piscar = false; proxPiscada = agora + 2000 + Math.random() * 3200; mudou = true; }
+      if (agora > proxBob){ est.dy = est.dy ? 0 : 1; proxBob = agora + 650; mudou = true; }
+      if (mudou) pinta();
+    }, 90);
+    return c;
+  }
+
+  return { criar, padrao, ESTILOS };
+})();
+if (typeof window !== 'undefined') window.PixelAvatar = PixelAvatar;
+
+/* ===== Painel de edição (só pra você) ===== */
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  function h(tag, props = {}, ...kids){
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(props)){
+      if (k === 'class') e.className = v; else if (k.startsWith('on')) e[k] = v;
+      else if (k === 'html') e.innerHTML = v; else if (v !== undefined && v !== null && v !== false) e.setAttribute(k, v === true ? '' : v);
+    }
+    kids.flat().forEach(c => { if (c !== null && c !== undefined) e.append(c.nodeType ? c : document.createTextNode(c)); });
+    return e;
+  }
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+  const store = {
+    get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+    set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
+    del(k){ try { localStorage.removeItem(k); } catch(e){} }
+  };
+  let toastT;
+  function toast(m, ms = 3000){ const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), ms); }
+
+  /* ======================= ESQUEMA DOS FORMULÁRIOS ======================= */
+  const IDS_MENU = [['inicio', 'início'], ['poemas', 'poemas'], ['galeria', 'galeria'], ['cartas', 'cartas'], ['linha', 'linha do tempo'], ['gostos', 'gostos'], ['musicas', 'músicas'], ['extras', 'extras'], ['cartinha', 'cartinha secreta'], ['sobre', 'nossa história']];
+  const CORES_BTN = [['rosa', 'rosa'], ['azul', 'azul'], ['turq', 'turquesa'], ['vinho', 'vinho'], ['branco', 'branco']];
+  const CORES_G = [['azul', 'azul'], ['turq', 'turquesa'], ['vinho', 'vinho'], ['rosa', 'rosa']];
+  const ESTILOS = [['curto', 'curto'], ['longo', 'longo'], ['rabo', 'rabo de cavalo'], ['coque', 'coque'], ['cacheado', 'cacheado / volumoso']];
+  const ACESS = [['nenhum', 'nenhum'], ['laco', 'laço'], ['bone', 'boné'], ['fone', 'fone de ouvido']];
+  const pessoa = (l) => { const dp = PixelAvatar.padrao(l, {}); return ({ t: 'group', k: l, titulo: l === 'ele' ? 'Ele (você)' : 'Ela', campos: [
+    { t: 'text', k: 'nome', l: 'Nome' },
+    { t: 'media', k: 'foto', l: 'Foto (opcional; vazio = bonequinho pixel)', accept: 'image' },
+    { t: 'group', k: 'pixel', titulo: 'Bonequinho pixel', campos: [
+      { t: 'avatar', qual: l },
+      { t: 'select', k: 'estilo', l: 'Cabelo', opts: ESTILOS, def: dp.estilo },
+      { t: 'select', k: 'acessorio', l: 'Acessório', opts: ACESS, def: dp.acessorio },
+      { t: 'check', k: 'oculos', l: 'Óculos' }, { t: 'check', k: 'barba', l: 'Barba' },
+      { t: 'check', k: 'sardas', l: 'Sardas' }, { t: 'check', k: 'brinco', l: 'Brincos' },
+      { t: 'color', k: 'pele', l: 'Pele', def: dp.pele }, { t: 'color', k: 'cabelo', l: 'Cabelo (cor)', def: dp.cabelo }, { t: 'color', k: 'roupa', l: 'Roupa', def: dp.roupa },
+      { t: 'color', k: 'olhos', l: 'Olhos', def: dp.olhos }, { t: 'color', k: 'laco', l: 'Cor do laço', def: dp.laco }
+    ] }
+  ] }); };
+
+  const SEC = [
+    { id: 'geral', icone: '⚙️', nome: 'Geral e cores', campos: [
+      { t: 'group', k: 'site', titulo: 'Site', campos: [
+        { t: 'text', k: 'titulo', l: 'Título da aba do navegador' },
+        { t: 'text', k: 'barraTitulo', l: 'Nome na barra de cima' },
+        { t: 'text', k: 'rodape', l: 'Frase do rodapé' } ] },
+      { t: 'group', k: 'tema', titulo: 'Cores do site', campos: [
+        { t: 'color', k: 'azul', l: 'Azul' }, { t: 'color', k: 'turquesa', l: 'Turquesa' }, { t: 'color', k: 'vinho', l: 'Vinho (vermelho escuro)' },
+        { t: 'color', k: 'rosa', l: 'Rosa' }, { t: 'color', k: 'branco', l: 'Branco' } ] },
+      { t: 'group', k: 'casal', titulo: 'O casal', campos: [
+        { t: 'datetime', k: 'inicio', l: 'Quando o namoro começou', dica: 'o contador de tempo juntos usa essa data' },
+        { t: 'text', k: 'frase', l: 'Frase embaixo dos nomes' },
+        pessoa('ele'), pessoa('ela') ] },
+      { t: 'group', k: 'intro', titulo: 'Carta de abertura', campos: [
+        { t: 'text', k: 'para', l: 'Escrito na carta ("para: ...")' }, { t: 'text', k: 'dica', l: 'Texto embaixo da carta' }, { t: 'text', k: 'selo', l: 'Símbolo do selo (ex: ♥)' } ] }
+    ] },
+    { id: 'botoes', icone: '🧭', nome: 'Menu e botões', campos: [
+      { t: 'aviso', texto: 'Apague um item para esconder aquela parte do site. A ordem aqui é a ordem no site.' },
+      { t: 'list', k: 'menu', l: 'Menu de cima', tit: o => (o.icone || '') + ' ' + (o.rotulo || ''), novo: () => ({ id: 'poemas', rotulo: 'novo', icone: '⭐' }), campos: [
+        { t: 'select', k: 'id', l: 'Abre', opts: IDS_MENU }, { t: 'text', k: 'rotulo', l: 'Nome' }, { t: 'text', k: 'icone', l: 'Emoji' } ] },
+      { t: 'list', k: 'atalhos', l: 'Botões grandes da tela inicial', tit: o => (o.icone || '') + ' ' + (o.rotulo || ''), novo: () => ({ id: 'poemas', rotulo: 'novo botão', icone: '⭐', cor: 'azul' }), campos: [
+        { t: 'select', k: 'id', l: 'Abre', opts: IDS_MENU.filter(x => x[0] !== 'inicio') }, { t: 'text', k: 'rotulo', l: 'Texto do botão' }, { t: 'text', k: 'icone', l: 'Emoji' }, { t: 'select', k: 'cor', l: 'Cor', opts: CORES_BTN } ] }
+    ] },
+    { id: 'inicio', icone: '🏠', nome: 'Tela inicial', campos: [
+      { t: 'strs', k: 'mensagensDoDia', l: 'Mensagens do dia (uma por dia, em rodízio)', area: true },
+      { t: 'group', k: 'sobre', titulo: 'Sobre nós', campos: [
+        { t: 'area', k: 'resumo', l: 'Resumo (aparece na tela inicial)' },
+        { t: 'strs', k: 'historia', l: 'Nossa história (parágrafos)', area: true } ] },
+      { t: 'group', k: 'player', titulo: 'Barra "tocando agora"', campos: [{ t: 'text', k: 'tocando', l: 'Texto inicial' }] },
+      { t: 'group', k: 'praia', titulo: 'Praia pixel art (fim do site)', campos: [
+        { t: 'text', k: 'titulo', l: 'Título' }, { t: 'text', k: 'legenda', l: 'Legenda' }, { t: 'text', k: 'dica', l: 'Dica' } ] }
+    ] },
+    { id: 'poemas', icone: '💌', nome: 'Poemas', campos: [
+      { t: 'list', k: 'poemas', l: 'Poemas', tit: o => (o.humor || '') + ' ' + (o.titulo || '(sem título)'), novo: () => ({ id: 'p' + uid(), titulo: 'Novo poema', data: new Date().toISOString().slice(0, 10), humor: '💗', texto: '' }), campos: [
+        { t: 'text', k: 'titulo', l: 'Título' }, { t: 'date', k: 'data', l: 'Data' }, { t: 'text', k: 'humor', l: 'Emoji' }, { t: 'area', k: 'texto', l: 'Poema (Enter = nova linha)', rows: 8 } ] }
+    ] },
+    { id: 'galeria', icone: '📷', nome: 'Fotos e vídeos', campos: [
+      { t: 'list', k: 'galeria.albuns', l: 'Álbuns (abas)', tit: o => (o.icone || '') + ' ' + (o.nome || ''), novo: () => ({ id: 'a' + uid(), nome: 'novo álbum', icone: '📁' }), campos: [
+        { t: 'text', k: 'nome', l: 'Nome' }, { t: 'text', k: 'icone', l: 'Emoji' } ] },
+      { t: 'list', k: 'galeria.itens', l: 'Fotos e vídeos', tit: o => (o.tipo === 'foto' ? '📷' : '🎬') + ' ' + (o.titulo || '(sem título)'), novo: () => ({ tipo: 'foto', src: '', icone: '📷', album: '', titulo: 'Nova foto', legenda: '', data: new Date().toISOString().slice(0, 10) }), campos: [
+        { t: 'select', k: 'tipo', l: 'Tipo', opts: [['foto', 'foto'], ['video', 'vídeo (arquivo)'], ['youtube', 'vídeo do YouTube']] },
+        { t: 'media', k: 'src', l: 'Arquivo (ou código do vídeo do YouTube)', accept: 'any', dica: 'Foto/vídeo: toque em 📁 enviar. YouTube: cole só o código (o que vem depois de v=). Vazio = imagem de exemplo.' },
+        { t: 'text', k: 'titulo', l: 'Título' }, { t: 'text', k: 'legenda', l: 'Legenda' }, { t: 'date', k: 'data', l: 'Data' },
+        { t: 'select', k: 'album', l: 'Álbum', opts: D => [['', '(nenhum)'], ...((D.galeria && D.galeria.albuns) || []).map(a => [a.id, (a.icone || '') + ' ' + a.nome])] },
+        { t: 'text', k: 'icone', l: 'Emoji da imagem de exemplo' } ] }
+    ] },
+    { id: 'cartas', icone: '✉️', nome: 'Cartas e recados', campos: [
+      { t: 'list', k: 'cartas.cartas', l: 'Cartas', tit: o => '💌 ' + (o.titulo || ''), novo: () => ({ id: 'c' + uid(), titulo: 'Nova carta', data: new Date().toISOString().slice(0, 10), texto: '' }), campos: [
+        { t: 'text', k: 'titulo', l: 'Título' }, { t: 'date', k: 'data', l: 'Data' }, { t: 'area', k: 'texto', l: 'Texto', rows: 9 } ] },
+      { t: 'strs', k: 'cartas.motivos', l: 'Motivos pelos quais te amo', area: true },
+      { t: 'list', k: 'cartas.abraQuando', l: 'Abra quando...', tit: o => (o.icone || '') + ' abra quando ' + (o.quando || ''), novo: () => ({ id: 'a' + uid(), icone: '💭', quando: 'estiver com saudade', texto: '' }), campos: [
+        { t: 'text', k: 'quando', l: 'Abra quando você... (continue a frase)' }, { t: 'text', k: 'icone', l: 'Emoji' }, { t: 'area', k: 'texto', l: 'Texto', rows: 7 } ] }
+    ] },
+    { id: 'linha', icone: '🗓️', nome: 'Linha do tempo', campos: [
+      { t: 'list', k: 'linha', l: 'Momentos', tit: o => (o.icone || '') + ' ' + (o.titulo || ''), novo: () => ({ data: new Date().toISOString().slice(0, 10), icone: '💗', titulo: 'Novo momento', texto: '' }), campos: [
+        { t: 'date', k: 'data', l: 'Data' }, { t: 'text', k: 'icone', l: 'Emoji' }, { t: 'text', k: 'titulo', l: 'Título' }, { t: 'area', k: 'texto', l: 'Descrição' } ] }
+    ] },
+    { id: 'gostos', icone: '🎮', nome: 'Gostos dela', campos: [
+      { t: 'strs', k: 'gostos.musicos', l: 'Cantores que ela ama (aparecem na tela inicial)' },
+      { t: 'list', k: 'gostos.ela', l: 'Gostos', tit: o => (o.icone || '') + ' ' + (o.nome || ''), novo: () => ({ icone: '⭐', nome: 'Novo gosto', cor: 'azul', deco: ['⭐'], resumo: '', favoritos: [], frase: '', recado: '', vale: '', missoes: [] }), campos: [
+        { t: 'text', k: 'nome', l: 'Nome' }, { t: 'text', k: 'icone', l: 'Emoji principal' }, { t: 'select', k: 'cor', l: 'Cor', opts: CORES_G },
+        { t: 'strs', k: 'deco', l: 'Emojis decorativos (no topo da janela)' },
+        { t: 'area', k: 'resumo', l: 'Por que ela ama' }, { t: 'strs', k: 'favoritos', l: 'Favoritos (personagens, jogos...)' },
+        { t: 'text', k: 'frase', l: 'Frase' }, { t: 'text', k: 'recado', l: 'Recado seu' }, { t: 'text', k: 'vale', l: 'Vale (ex: 1 maratona de...)' },
+        { t: 'strs', k: 'missoes', l: 'Missões do casal (sorteadas)' },
+        { t: 'select', k: 'abre', l: 'Em vez disso, abrir outra janela', opts: [['', '(não)'], ['musicas', 'playlist']] } ] }
+    ] },
+    { id: 'musicas', icone: '🎵', nome: 'Músicas', campos: [
+      { t: 'group', k: 'musicas.spotify', titulo: '💚 Playlist do Spotify', campos: [
+        { t: 'text', k: 'titulo', l: 'Título' },
+        { t: 'text', k: 'url', l: 'Link da playlist', dica: 'No Spotify: playlist > três pontinhos > Compartilhar > Copiar link. Cole aqui.' },
+        { t: 'text', k: 'descricao', l: 'Frase embaixo do título' } ] },
+      { t: 'group', k: 'lofi', titulo: '🌙 Lo-fi do site', campos: [
+        { t: 'check', k: 'iniciar', l: 'Tocar sozinho quando ela abrir a carta' },
+        { t: 'text', k: 'titulo', l: 'Título' },
+        { t: 'select', k: 'volume', l: 'Volume inicial', def: 40, opts: [[20, 'baixinho'], [40, 'médio'], [60, 'alto']] },
+        { t: 'select', k: 'clima', l: 'Clima inicial', def: 0, opts: [[0, 'tarde calma'], [1, 'noite chuvosa'], [2, 'café da manhã'], [3, 'madrugada']] } ] },
+      { t: 'group', k: 'musicas.nossaMusica', titulo: 'Nossa música', campos: [
+        { t: 'text', k: 'titulo', l: 'Música' }, { t: 'text', k: 'artista', l: 'Artista' }, { t: 'area', k: 'porque', l: 'Por que é a música de vocês' },
+        { t: 'text', k: 'youtube', l: 'Código do YouTube (opcional)' }, { t: 'text', k: 'link', l: 'Link (opcional)' } ] },
+      { t: 'list', k: 'musicas.artistas', l: 'Artistas', tit: o => (o.icone || '') + ' ' + (o.nome || ''), novo: () => ({ id: 'ar' + uid(), nome: 'Novo artista', icone: '🎤', cor: 'azul', descricao: '', porque: '', faixas: [] }), campos: [
+        { t: 'text', k: 'nome', l: 'Nome' }, { t: 'text', k: 'icone', l: 'Emoji' }, { t: 'select', k: 'cor', l: 'Cor', opts: CORES_G },
+        { t: 'area', k: 'descricao', l: 'Sobre o artista' }, { t: 'text', k: 'porque', l: 'Por que ela ama' },
+        { t: 'list', k: 'faixas', l: 'Faixas favoritas', tit: o => '▶ ' + (o.titulo || ''), novo: () => ({ titulo: 'Nova música', album: '', porque: '' }), campos: [
+          { t: 'text', k: 'titulo', l: 'Música' }, { t: 'text', k: 'album', l: 'Álbum' }, { t: 'text', k: 'porque', l: 'Por que' },
+          { t: 'text', k: 'youtube', l: 'Código do YouTube (opcional)' }, { t: 'text', k: 'link', l: 'Link (opcional)' } ] } ] }
+    ] },
+    { id: 'extras', icone: '🎁', nome: 'Extras', campos: [
+      { t: 'list', k: 'cupons', l: 'Cupons', tit: o => (o.icone || '') + ' ' + (o.titulo || ''), novo: () => ({ id: 'k' + uid(), icone: '🎟️', titulo: 'Novo cupom', descricao: '' }), campos: [
+        { t: 'text', k: 'titulo', l: 'Título' }, { t: 'text', k: 'icone', l: 'Emoji' }, { t: 'area', k: 'descricao', l: 'Descrição' } ] },
+      { t: 'list', k: 'mural', l: 'Mural de recados', tit: o => '📌 ' + (o.autor || '') + ': ' + (o.texto || '').slice(0, 24), novo: () => ({ autor: 'Gui', cor: 'rosa', texto: '' }), campos: [
+        { t: 'text', k: 'autor', l: 'De quem' }, { t: 'select', k: 'cor', l: 'Cor do post-it', opts: [['rosa', 'rosa'], ['turq', 'turquesa'], ['azul', 'azul'], ['creme', 'amarelinho']] }, { t: 'area', k: 'texto', l: 'Recado' } ] },
+      { t: 'group', k: 'eggs', titulo: 'Segredos escondidos', campos: [
+        { t: 'group', k: 'konami', titulo: 'Código Konami (↑↑↓↓←→←→ B A)', campos: [{ t: 'text', k: 'titulo', l: 'Título' }, { t: 'area', k: 'texto', l: 'Texto' }] },
+        { t: 'group', k: 'toqueTitulo', titulo: '7 toques no ♥ da barra', campos: [{ t: 'text', k: 'titulo', l: 'Título' }, { t: 'area', k: 'texto', l: 'Texto' }] },
+        { t: 'group', k: 'falas', titulo: 'Falas ao tocar nos avatares', campos: [{ t: 'strs', k: 'ele', l: 'Quando tocar em você' }, { t: 'strs', k: 'ela', l: 'Quando tocar nela' }] } ] }
+    ] },
+    { id: 'segredo', icone: '🔐', nome: 'Cartinha secreta', campos: [
+      { t: 'segredo' },
+      { t: 'text', k: 'segredo.titulo', l: 'Título' },
+      { t: 'datetime', k: 'segredo.liberaEm', l: 'Só abre a partir de', dica: 'vazio = sempre aberta. Pra testar antes: coloque #teste no fim do link do site.' },
+      { t: 'text', k: 'segredo.dica', l: 'Dica mostrada enquanto está trancada' },
+      { t: 'text', k: 'segredo.senha', l: 'Palavra secreta (opcional)', dica: 'Com palavra secreta, a carta é CIFRADA: ninguém consegue ler o texto olhando os arquivos do site.' },
+      { t: 'area', k: 'segredo.texto', l: 'Texto da carta', rows: 12 },
+      { t: 'text', k: 'segredo.assinatura', l: 'Assinatura' }
+    ] }
+  ];
+
+  /* ======================= ESTADO ======================= */
+  let D = null;                                   // rascunho atual
+  let original = null;                            // conteúdo publicado (para detectar mudanças)
+  let cfg = store.get('pc_admin', { token: '', owner: '', repo: '', branch: 'main' });
+  const inferir = () => {
+    const m = location.hostname.match(/^(.+)\.github\.io$/), seg = location.pathname.split('/').filter(Boolean);
+    return { owner: m ? m[1] : '', repo: m ? (seg.length > 1 || (seg[0] && !/\./.test(seg[0])) ? seg[0] : m[0]) : '' };
+  };
+  if (!cfg.owner || !cfg.repo){ const i = inferir(); cfg.owner = cfg.owner || i.owner; cfg.repo = cfg.repo || i.repo; }
+
+  const getp = (o, path) => path.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
+  const setp = (o, path, v) => { const p = path.split('.'); const last = p.pop(); const t = p.reduce((a, k) => (a[k] == null ? (a[k] = {}) : a[k]), o); t[last] = v; };
+
+  let salvarT;
+  function mudou(){
+    status('alterações não publicadas ✏️');
+    clearTimeout(salvarT);
+    salvarT = setTimeout(() => { try { localStorage.setItem('pc_rascunho', JSON.stringify(D)); } catch(e){} }, 400);
+  }
+  function status(t){ const s = $('#st'); if (s) s.textContent = t; }
+
+  /* ======================= RENDERIZAÇÃO ======================= */
+  function campo(obj, f, raiz){
+    const get = () => f.k ? (f.k.includes('.') ? getp(obj, f.k) : obj[f.k]) : undefined;
+    const setq = v => { f.k.includes('.') ? setp(obj, f.k, v) : (obj[f.k] = v); };
+    const set = v => { setq(v); mudou(); };
+    const w = h('div', { class: 'f' });
+    const lab = f.l ? h('label', {}, f.l) : h('span');
+    const dica = f.dica ? h('small', { class: 'dica' }, f.dica) : h('span');
+
+    switch (f.t){
+      case 'aviso': return h('div', { class: 'aviso' }, f.texto);
+      case 'text': case 'date': case 'color': {
+        const i = h('input', { type: f.t === 'text' ? 'text' : f.t, autocomplete: 'off' });
+        i.value = get() ?? f.def ?? (f.t === 'color' ? '#000000' : '');
+        i.oninput = () => set(i.value); w.append(lab, i, dica); return w;
+      }
+      case 'datetime': {
+        const i = h('input', { type: 'datetime-local' });
+        i.value = (get() || '').slice(0, 16);
+        i.oninput = () => set(i.value ? i.value + ':00' : ''); w.append(lab, i, dica); return w;
+      }
+      case 'area': {
+        const i = h('textarea', { rows: f.rows || 4 }); i.value = get() ?? '';
+        i.oninput = () => set(i.value); w.append(lab, i, dica); return w;
+      }
+      case 'select': {
+        const s = h('select'); const opts = typeof f.opts === 'function' ? f.opts(raiz) : f.opts;
+        opts.forEach(([v, n]) => s.append(h('option', { value: v }, n)));
+        s.value = get() ?? f.def ?? opts[0][0]; if (get() == null) setq(s.value);
+        s.onchange = () => set(s.value); w.append(lab, s, dica); return w;
+      }
+      case 'media': {
+        const i = h('input', { type: 'text', placeholder: 'caminho do arquivo' }); i.value = get() ?? '';
+        const img = h('img', { alt: '', hidden: true });
+        const mostra = () => { const v = i.value; const ok = /\.(jpe?g|png|gif|webp)$/i.test(v); img.hidden = !ok; if (ok) img.src = v; };
+        i.oninput = () => { set(i.value); mostra(); };
+        const arq = h('input', { type: 'file', hidden: true, accept: f.accept === 'image' ? 'image/*' : 'image/*,video/*' });
+        const bt = h('button', { class: 'mini', type: 'button', onclick: () => arq.click() }, '📁 enviar');
+        arq.onchange = async () => { if (!arq.files[0]) return; bt.textContent = '⏳'; try { const p = await enviarMidia(arq.files[0]); i.value = p; set(p); mostra(); toast('enviado! ✔'); } catch(e){ toast('erro: ' + e.message, 5000); } bt.textContent = '📁 enviar'; arq.value = ''; };
+        mostra(); w.append(lab, h('div', { class: 'midia' }, img, i, bt, arq), dica); return w;
+      }
+      case 'group': {
+        const fs = h('fieldset', {}, h('legend', {}, f.titulo));
+        let alvo = obj;
+        if (f.k){ if (f.k.includes('.')){ if (!getp(obj, f.k)) setp(obj, f.k, {}); alvo = getp(obj, f.k); } else { alvo = obj[f.k] = obj[f.k] || {}; } }
+        f.campos.forEach(c => fs.append(campo(alvo, c, raiz)));
+        return fs;
+      }
+      case 'strs': return listaStrs(obj, f, get, setq, w);
+      case 'list': return listaObjs(obj, f, get, setq, raiz, w);
+      case 'segredo': return avisoSegredo();
+      case 'check': {
+        const i = h('input', { type: 'checkbox' }); i.checked = !!get();
+        i.onchange = () => set(i.checked);
+        return h('label', { class: 'chk' }, i, ' ' + f.l);
+      }
+      case 'avatar': {
+        const cx = h('div', { class: 'prev-av' });
+        const pinta = () => { cx.innerHTML = ''; const c = PixelAvatar.criar(f.qual, obj); cx.append(c); };
+        pinta();
+        setTimeout(() => { const fs = cx.closest('fieldset'); if (fs) ['input', 'change'].forEach(ev => fs.addEventListener(ev, pinta)); }, 0);
+        cx.onclick = () => cx.firstChild && cx.firstChild.animarFeliz && cx.firstChild.animarFeliz(); return h('div', { class: 'f' }, h('label', {}, 'Prévia (toque no desenho)'), cx);
+      }
+    }
+    return w;
+  }
+
+  function mover(arr, i, d){ const j = i + d; if (j < 0 || j >= arr.length) return false; [arr[i], arr[j]] = [arr[j], arr[i]]; return true; }
+
+  function listaStrs(obj, f, get, set, w){
+    let arr = get(); if (!Array.isArray(arr)){ arr = []; set(arr); }
+    const topo = h('label', {}, f.l), corpo = h('div'), add = h('button', { class: 'mini', type: 'button' }, '＋ adicionar');
+    const desenha = () => {
+      corpo.innerHTML = '';
+      arr.forEach((v, i) => {
+        const t = h('textarea', { rows: f.area ? 3 : 1 }); t.value = v; t.oninput = () => { arr[i] = t.value; mudou(); };
+        const c = h('div', { class: 'ctrl' },
+          h('button', { class: 'mini', type: 'button', onclick: () => { if (mover(arr, i, -1)){ mudou(); desenha(); } } }, '↑'),
+          h('button', { class: 'mini', type: 'button', onclick: () => { if (mover(arr, i, 1)){ mudou(); desenha(); } } }, '↓'),
+          h('button', { class: 'mini perigo', type: 'button', onclick: () => { if (confirm('Apagar este item?')){ arr.splice(i, 1); mudou(); desenha(); } } }, '✕'));
+        corpo.append(h('div', { class: 'strrow' }, t, c));
+      });
+    };
+    add.onclick = () => { arr.push(''); mudou(); desenha(); const t = corpo.querySelectorAll('textarea'); t[t.length - 1].focus(); };
+    desenha(); w.append(topo, corpo, add); return w;
+  }
+
+  function listaObjs(obj, f, get, set, raiz, w){
+    let arr = get(); if (!Array.isArray(arr)){ arr = []; set(arr); }
+    const topo = h('label', {}, f.l), corpo = h('div'), add = h('button', { class: 'btn turq', type: 'button' }, '＋ adicionar');
+    const desenha = abrir => {
+      corpo.innerHTML = '';
+      arr.forEach((o, i) => {
+        const d = h('details', { class: 'item' });
+        const tit = h('span', { class: 't' }, f.tit(o));
+        const ctrl = h('span', { class: 'ctrl' },
+          h('button', { class: 'mini', type: 'button', onclick: e => { e.preventDefault(); if (mover(arr, i, -1)){ mudou(); desenha(i - 1); } } }, '↑'),
+          h('button', { class: 'mini', type: 'button', onclick: e => { e.preventDefault(); if (mover(arr, i, 1)){ mudou(); desenha(i + 1); } } }, '↓'),
+          h('button', { class: 'mini', type: 'button', onclick: e => { e.preventDefault(); arr.splice(i + 1, 0, JSON.parse(JSON.stringify(o))); if (o.id) arr[i + 1].id = o.id + uid(); mudou(); desenha(i + 1); } }, '⧉'),
+          h('button', { class: 'mini perigo', type: 'button', onclick: e => { e.preventDefault(); if (confirm('Apagar "' + f.tit(o).trim() + '"?')){ arr.splice(i, 1); mudou(); desenha(); } } }, '✕'));
+        d.append(h('summary', {}, h('span', { class: 'n' }, '#' + (i + 1)), tit, ctrl));
+        const cp = h('div', { class: 'corpo' }); f.campos.forEach(c => cp.append(campo(o, c, raiz))); d.append(cp);
+        d.addEventListener('input', () => { tit.textContent = f.tit(o); });
+        if (abrir === i) d.open = true;
+        corpo.append(d);
+      });
+      if (!arr.length) corpo.append(h('p', { class: 'aviso rosa' }, 'Nada por aqui ainda. Toque em "adicionar".'));
+    };
+    add.onclick = () => { arr.push(f.novo()); mudou(); desenha(arr.length - 1); const ds = corpo.querySelectorAll('details'); ds[ds.length - 1].scrollIntoView({ block: 'center' }); };
+    desenha(); w.append(topo, corpo, add); return w;
+  }
+
+  /* ======================= TELAS ======================= */
+  function telaMenu(){
+    const main = $('#main'); main.innerHTML = '';
+    main.append(h('div', { class: 'aviso ok', html: '<b>Oi!</b> Escolha o que quer editar. Suas alterações ficam salvas como <b>rascunho</b> neste aparelho. Use <b>👁 prévia</b> para ver como ficou e <b>💾 publicar</b> para colocar no site.' }));
+    if (!cfg.token) main.append(h('div', { class: 'aviso rosa', html: '🔑 Para <b>publicar</b> pelo painel você precisa configurar o token do GitHub uma vez. Toque em <b>🔑 conexão</b> lá em cima.' }));
+    const g = h('div', { class: 'menu' });
+    SEC.forEach(s => g.append(h('button', { class: 'sec', onclick: () => telaSecao(s) }, h('span', {}, s.icone), s.nome)));
+    main.append(g);
+    main.append(h('div', { class: 'row' },
+      h('button', { class: 'btn branco', onclick: baixar }, '⬇ baixar content.js'),
+      h('button', { class: 'btn branco', onclick: descartar }, '🗑 descartar rascunho')));
+  }
+  function telaSecao(s){
+    const main = $('#main'); main.innerHTML = '';
+    main.append(h('button', { class: 'btn branco voltar', onclick: telaMenu }, '← voltar'), h('h2', { class: 'tit' }, s.icone + ' ' + s.nome));
+    s.campos.forEach(c => main.append(campo(D, c, D)));
+    window.scrollTo(0, 0);
+  }
+
+  /* ======================= CARTINHA CIFRADA ======================= */
+  const norm = x => String(x || '').trim().toLowerCase();
+  const b64e = u => btoa(String.fromCharCode(...new Uint8Array(u)));
+  const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  async function chave(senha, salt, it){
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(norm(senha)), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: it, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+  }
+  async function cifrar(texto, senha){
+    const it = 150000, salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+    const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await chave(senha, salt, it), new TextEncoder().encode(texto));
+    return { salt: b64e(salt), iv: b64e(iv), ct: b64e(ct), it };
+  }
+  async function decifrar(c, senha){
+    const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64d(c.iv) }, await chave(senha, b64d(c.salt), c.it || 150000), b64d(c.ct));
+    return new TextDecoder().decode(pt);
+  }
+  function avisoSegredo(){
+    const s = D.segredo || (D.segredo = {});
+    if (!s.cifrado) return h('div', { class: 'aviso', html: 'Se você definir uma <b>palavra secreta</b> abaixo, a carta é <b>cifrada</b> ao publicar. Sem palavra secreta, o texto fica legível nos arquivos do site (qualquer um que abrir o código consegue ler).' });
+    const box = h('div', { class: 'aviso rosa' });
+    box.append(h('div', { html: '🔒 A carta publicada está <b>cifrada</b>. Para <b>editar</b> o texto, digite a palavra secreta atual. Se não quiser mudar nada nela, ignore: ela continua protegida.' }));
+    const i = h('input', { type: 'text', placeholder: 'palavra secreta atual', autocomplete: 'off', style: 'margin-top:8px' });
+    const b = h('button', { class: 'btn turq', style: 'margin-top:8px', onclick: async () => {
+      try { const t = await decifrar(s.cifrado, i.value); s.texto = t; s.senha = i.value.trim(); delete s.cifrado; mudou(); toast('carta aberta! ✔'); telaSecao(SEC.find(x => x.id === 'segredo')); }
+      catch(e){ toast('palavra errada 🤔'); }
+    } }, '🔓 abrir carta pra editar');
+    box.append(i, b); return box;
+  }
+
+  /* ======================= GITHUB ======================= */
+  const api = (path, opt = {}) => fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/${path}`, {
+    ...opt, headers: { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', Authorization: 'Bearer ' + cfg.token, ...(opt.headers || {}) }
+  });
+  const tb64 = bytes => { let s = ''; const ch = 0x8000; for (let i = 0; i < bytes.length; i += ch) s += String.fromCharCode.apply(null, bytes.subarray(i, i + ch)); return btoa(s); };
+  const sTb64 = str => tb64(new TextEncoder().encode(str));
+  const blobB64 = blob => new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(',')[1]); r.onerror = no; r.readAsDataURL(blob); });
+
+  async function erroApi(r){
+    let m = ''; try { m = (await r.json()).message; } catch(e){}
+    if (r.status === 401) return 'token inválido ou expirado (401)';
+    if (r.status === 403) return 'sem permissão (403): o token precisa de "Contents: Read and write" neste repositório';
+    if (r.status === 404) return 'repositório ou arquivo não encontrado (404): confira usuário/repositório e as permissões do token';
+    if (r.status === 409 || r.status === 422) return 'conflito (' + r.status + '): ' + m;
+    return 'erro ' + r.status + ' ' + m;
+  }
+  async function lerPublicado(){
+    // com token: lê direto do repositório (sempre o mais novo); sem token: do site
+    if (cfg.token && cfg.owner && cfg.repo){
+      try {
+        const r = await api(`contents/content.js?ref=${encodeURIComponent(cfg.branch || 'main')}`);
+        if (r.ok){ const j = await r.json(); return { texto: new TextDecoder().decode(b64d(j.content.replace(/\n/g, ''))), sha: j.sha }; }
+      } catch(e){ /* sem internet/API: cai para o arquivo do site */ }
+    }
+    const r = await fetch('content.js?x=' + Date.now()); if (!r.ok) throw new Error('não achei o content.js');
+    return { texto: await r.text(), sha: null };
+  }
+  const parse = texto => { const w = {}; new Function('window', texto)(w); if (!w.CONTENT) throw new Error('content.js inválido'); return JSON.parse(JSON.stringify(w.CONTENT)); };
+
+  async function enviarMidia(file){
+    if (!cfg.token) throw new Error('configure o token em 🔑 conexão para enviar arquivos');
+    let blob = file, ext = (file.name.split('.').pop() || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (file.type.startsWith('image/') && file.type !== 'image/gif'){
+      try {
+        const bmp = await createImageBitmap(file), k = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+        const c = document.createElement('canvas'); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+        c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+        blob = await new Promise(r => c.toBlob(r, 'image/jpeg', .85)); ext = 'jpg';
+      } catch(e){ /* envia o original */ }
+    }
+    if (blob.size > 45 * 1024 * 1024) throw new Error('arquivo muito grande (limite ~45 MB). Para vídeos grandes use o YouTube (não listado).');
+    const nome = file.name.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30) || 'arquivo';
+    const path = `midia/${Date.now().toString(36)}-${nome}.${ext}`;
+    const r = await api('contents/' + path, { method: 'PUT', body: JSON.stringify({ message: 'foto/vídeo pelo painel', content: await blobB64(blob), branch: cfg.branch || 'main' }) });
+    if (!r.ok) throw new Error(await erroApi(r));
+    return path;
+  }
+
+  async function paraPublicar(){
+    const P = JSON.parse(JSON.stringify(D)), s = P.segredo;
+    if (s){
+      if (s.senha && s.texto){ s.cifrado = await cifrar(s.texto, s.senha); delete s.texto; delete s.senha; }
+      else if (s.cifrado){ delete s.texto; delete s.senha; }
+      else { delete s.senha; }
+    }
+    return '/* Arquivo gerado pelo painel (admin.html). Pode editar à mão, mas o painel reescreve ao salvar. */\nwindow.CONTENT = ' + JSON.stringify(P, null, 2) + ';\n';
+  }
+
+  async function publicar(){
+    if (!cfg.token){ abrirConexao(); toast('configure o token primeiro 🔑'); return; }
+    const bt = $('#bPub'); bt.disabled = true; status('publicando... ⏳');
+    try {
+      const texto = await paraPublicar();
+      let sha = null;
+      const g = await api(`contents/content.js?ref=${encodeURIComponent(cfg.branch || 'main')}`);
+      if (g.ok) sha = (await g.json()).sha; else if (g.status !== 404) throw new Error(await erroApi(g));
+      const r = await api('contents/content.js', { method: 'PUT', body: JSON.stringify({ message: 'atualização pelo painel', content: sTb64(texto), sha: sha || undefined, branch: cfg.branch || 'main' }) });
+      if (!r.ok) throw new Error(await erroApi(r));
+      store.del('pc_rascunho'); status('publicado ✔ (o site atualiza em ~1 minuto)');
+      toast('publicado! o site atualiza em cerca de 1 minuto 🎉', 5000);
+    } catch(e){ status('não publicou ✖'); toast('erro: ' + e.message, 6000); }
+    bt.disabled = false;
+  }
+
+  async function previa(){
+    try { localStorage.setItem('pc_rascunho', JSON.stringify(D)); } catch(e){ toast('não consegui guardar a prévia'); return; }
+    window.open('index.html#previa,pular,teste', '_blank');
+  }
+  async function baixar(){
+    const texto = await paraPublicar();
+    const a = h('a', { href: URL.createObjectURL(new Blob([texto], { type: 'text/javascript' })), download: 'content.js' }); document.body.append(a); a.click(); a.remove();
+    toast('baixado! suba no GitHub no lugar do content.js antigo', 5000);
+  }
+  function descartar(){
+    if (!confirm('Descartar suas alterações não publicadas e voltar ao que está no site?')) return;
+    store.del('pc_rascunho'); location.reload();
+  }
+
+  /* ======================= CONEXÃO ======================= */
+  function abrirConexao(){
+    const m = $('#modal'); m.classList.add('on');
+    $('#cOwner').value = cfg.owner || ''; $('#cRepo').value = cfg.repo || ''; $('#cBranch').value = cfg.branch || 'main'; $('#cToken').value = cfg.token || '';
+  }
+  function salvarConexao(){
+    cfg = { owner: $('#cOwner').value.trim(), repo: $('#cRepo').value.trim(), branch: $('#cBranch').value.trim() || 'main', token: $('#cToken').value.trim() };
+    store.set('pc_admin', cfg); toast('conexão salva neste aparelho ✔');
+  }
+  async function testarConexao(){
+    salvarConexao();
+    try {
+      const r = await api(''); if (!r.ok) throw new Error(await erroApi(r));
+      const j = await r.json();
+      toast(j.permissions && j.permissions.push ? 'conexão ok! você pode publicar ✔' : 'conectou, mas SEM permissão de escrita ✖', 5000);
+    } catch(e){ toast('falhou: ' + e.message, 6000); }
+  }
+
+  /* ======================= INÍCIO ======================= */
+  async function iniciar(){
+    $('#bPrev').onclick = previa; $('#bPub').onclick = publicar; $('#bCon').onclick = abrirConexao;
+    $('#cFechar').onclick = () => $('#modal').classList.remove('on');
+    $('#cSalvar').onclick = () => { salvarConexao(); $('#modal').classList.remove('on'); telaMenu(); };
+    $('#cTestar').onclick = testarConexao;
+    $('#cSair').onclick = () => { cfg.token = ''; store.set('pc_admin', cfg); $('#cToken').value = ''; toast('token esquecido neste aparelho'); };
+    try {
+      const pub = await lerPublicado(); original = parse(pub.texto); D = JSON.parse(JSON.stringify(original));
+    } catch(e){
+      $('#main').append(h('div', { class: 'aviso rosa' }, 'Não consegui carregar o content.js: ' + e.message + '. O admin.html precisa ficar na mesma pasta do index.html e do content.js.'));
+      return;
+    }
+    const r = store.get('pc_rascunho', null);
+    if (r){ D = r; status('você tem um rascunho não publicado ✏️'); }
+    else status('tudo igual ao site ✔');
+    telaMenu();
+  }
+  window.PC_ADMIN = { cifrar, decifrar, parse };
+  document.addEventListener('DOMContentLoaded', iniciar);
+})();
+
+</script>
+</body>
+</html>
