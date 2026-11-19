@@ -54,65 +54,13 @@ window.CONTENT = {
     "dica": "toque na carta pra abrir",
     "selo": "♥"
   },
-  "menu": [
-    {
-      "id": "inicio",
-      "rotulo": "início",
-      "icone": "🏠"
-    },
-    {
-      "id": "poemas",
-      "rotulo": "poemas",
-      "icone": "💌"
-    },
-    {
-      "id": "galeria",
-      "rotulo": "galeria",
-      "icone": "📷"
-    },
-    {
-      "id": "cartas",
-      "rotulo": "cartas",
-      "icone": "✉️"
-    },
-    {
-      "id": "linha",
-      "rotulo": "nossa linha",
-      "icone": "🗓️"
-    },
-    {
-      "id": "gostos",
-      "rotulo": "gostos",
-      "icone": "🎮"
-    },
-    {
-      "id": "musicas",
-      "rotulo": "músicas",
-      "icone": "🎵"
-    },
-    {
-      "id": "extras",
-      "rotulo": "extras",
-      "icone": "🎁"
-    },
-    {
-      "id": "cartinha",
-      "rotulo": "segredo",
-      "icone": "🔐"
-    }
-  ],
+  "menu": [],
   "atalhos": [
     {
       "id": "poemas",
       "rotulo": "poemas pra você",
       "icone": "💌",
       "cor": "rosa"
-    },
-    {
-      "id": "galeria",
-      "rotulo": "nossas fotos",
-      "icone": "📷",
-      "cor": "azul"
     },
     {
       "id": "cartas",
