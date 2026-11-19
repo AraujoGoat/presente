@@ -106,21 +106,21 @@ window.CONTENT = {
     }
   ],
   "mensagensDoDia": [
-    "Hoje eu só queria te lembrar que você é a minha pessoa favorita.",
-    "Se a vida fosse um jogo, eu escolheria você como parceira em todas as fases.",
-    "Você é meu save point: onde eu me sinto em casa.",
-    "Obrigado por tornar até os dias ruins mais leves.",
-    "Eu gosto de tudo que a gente faz junto, até do silêncio.",
-    "Você é a melhor coisa que aconteceu na minha história.",
-    "Respira fundo: você é incrível e eu tô aqui por você.",
-    "Seu sorriso é a minha trilha sonora favorita."
+    "Entre tantos acasos que a vida poderia me oferecer, ainda considero você o mais bonito deles. Há algo na sua existência que torna meus dias mais leves e o mundo um lugar onde vale a pena permanecer.",
+    "Se a vida me permitir escolher um lugar para repousar meus pensamentos, que seja sempre ao seu lado, onde até o silêncio parece ter aprendido a falar de paz.",
+    "Não sei como explicar a delicadeza da sua existência, mas sei que, desde que você chegou, até os dias mais comuns parecem guardar um pouco de poesia.",
+    "Teu rosto é poesia que dispensa escritor, tua beleza é arte que não precisa de pintor. E mesmo que mil estrelas tentassem te iluminar, nenhuma teria teu brilho ou teu jeito de encantar.",
+    "Há flores que encantam pela cor, estrelas que brilham ao luar, mas nenhuma beleza se compara àquela que encontro em teu olhar e nunca me canso de admirar.",
+    "Teu sorriso faz inveja ao brilho das estrelas, teu olhar faz a própria lua se render. Se a beleza tivesse nome e sobrenome, certamente seria o teu, meu bem querer.",
+    "Em meio ao caos, és minha calmaria, meu refúgio mais bonito, minha doce alegria. Pois quando estou contigo, tudo encontra seu lugar, e até os dias mais difíceis aprendem a descansar.",
+    "Se o mundo pesar, serei teu abrigo; se a estrada for longa, caminharei contigo. Não importa o destino, nem o que acontecer, enquanto houver caminho, ao teu lado vou permanecer."
   ],
   "sobre": {
-    "resumo": "A gente se achou no meio de jogos, séries e músicas. Desde então, cada dia vira um capítulo novo.",
+    "resumo": "Você chegou por acaso, tornou-se meu carinho diário e, hoje, é minha companhia favorita. O que começou inesperadamente, desejo cultivar eternamente. ",
     "historia": [
-      "Tudo começou de um jeito simples, com uma conversa que não queria acabar. Eu não sabia, mas ali já estava começando a minha parte favorita do dia.",
-      "Desde então, a gente já riu até doer, assistiu coisa demais, jogou até de madrugada e descobriu que o melhor lugar do mundo é do lado um do outro.",
-      "(Troque este texto pela história de vocês de verdade ♡)"
+      "É curioso pensar que tudo começou de maneira tão inesperada. Você simplesmente chegou, quase como quem não pretende deixar marcas, e entrou em um pequeno lugar que eu havia criado sem imaginar que, entre tantas pessoas e possibilidades, encontraria alguém tão especial. Os dias foram passando, nossas conversas se tornaram cada vez mais frequentes, e aquilo que antes eram apenas palavras trocadas começou a ganhar um significado diferente. Aos poucos, sua presença deixou de ser apenas uma visita e se tornou parte dos meus dias, algo que eu já esperava encontrar sempre que estivesse por ali.",
+      "Com o passar do tempo, a proximidade deu lugar a um carinho que já não conseguíamos esconder. As conversas ficaram mais doces, os gestos mais afetuosos e até os pequenos detalhes começaram a ter uma importância imensa. Sem percebermos exatamente quando aconteceu, deixamos de ser apenas duas pessoas que gostavam da companhia uma da outra e nos tornamos duas pessoas que desejavam compartilhar a vida. Então veio o nosso namoro, transformando aquele encontro inesperado em uma das partes mais bonitas da minha história. O que começou por acaso ganhou propósito, e o que parecia tão simples se tornou algo que hoje guardo com tanto carinho.",
+      "Agora, seguimos juntos, aprendendo um com o outro, compartilhando alegrias, enfrentando dificuldades e encontrando maneiras de tornar os dias mais leves. Quero estar presente em suas conquistas, ampará-la nos momentos difíceis, comemorar suas pequenas vitórias e lembrá-la de que nunca precisará enfrentar tudo sozinha enquanto eu puder estar ao seu lado. E, quando penso em como chegamos até aqui, percebo que algumas das coisas mais bonitas da vida não precisam ser planejadas: simplesmente acontecem. Você chegou sem aviso, permaneceu sem que eu percebesse o quanto se tornaria importante e, hoje, é alguém com quem desejo continuar escrevendo tantos outros capítulos."
     ]
   },
   "player": {
@@ -610,8 +610,8 @@ window.CONTENT = {
     ]
   },
   "praia": {
-    "titulo": "nossa praia",
-    "legenda": "nós dois, de mãos dadas, até o fim",
+    "titulo": "Só eu e você.",
+    "legenda": "Would you like to hold my hand on the beach?",
     "dica": "toque no sol ou na lua pra mudar a hora do dia"
   },
   "segredo": {
