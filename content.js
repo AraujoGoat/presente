@@ -255,26 +255,40 @@ window.CONTENT = {
   "cartas": {
     "cartas": [],
     "motivos": [
-      "Porque é você."
+      "Eu te amo pela paz que você me dá.",
+      "Eu te amo pelo jeito como você me trata.",
+      "Eu te amo pelo seu jeito fofuxo de ser.",
+      "Eu te amo pelo seu \"bu\" que me deixa feliz porque é sinal que você voltou.",
+      "Eu te amo pelos seus olhos.",
+      "Eu te amo pela sua voz.",
+      "Eu te amo pela sua personalidade.",
+      "Eu te amo pela forma que você demostra amor.",
+      "Eu te amo pelo seus cachinhos.",
+      "Eu te amo pela maneira que você me faz se sentir especial.",
+      "Eu te amo pela sua inteligência.",
+      "Eu te amo pelo conforto que encontro em você.\n",
+      "Eu te amo pelo seu jeito de cuidar de mim.",
+      "Eu te amo pelos sonhos que quero realizar ao seu lado.",
+      "Eu te amo por você ser você."
     ],
     "abraQuando": [
       {
         "id": "a1",
         "icone": "🌧️",
         "quando": "você estiver triste",
-        "texto": "Respira. Você não precisa dar conta de tudo hoje.\nEu tô aqui, mesmo de longe, torcendo por você. Você já passou por dias difíceis antes e sempre foi mais forte do que imaginava. Me liga, me chama, ou só deixa eu te mandar um abraço."
+        "texto": "Respira, meu amor. Você não precisa carregar o peso do mundo inteiro hoje, nem encontrar respostas para tudo de uma vez. Permita-se descansar, porque até os corações mais fortes precisam de um lugar onde possam repousar.\n\nEu estou aqui, mesmo que a distância nos separe. Se quiser conversar, vou ouvir cada palavra; se não conseguir falar, posso simplesmente ficar ao seu lado em silêncio. Não precisa fingir que está tudo bem comigo, nem esconder suas lágrimas ou seus medos. Quero ser alguém com quem você possa baixar a guarda e encontrar um pouco de paz.\n\nVocê já enfrentou tantos dias difíceis e, mesmo quando não percebe, continua encontrando forças para seguir. Mas não precisa ser forte o tempo inteiro, minha princesa. Quando suas forças faltarem, permita-me ficar com você. Talvez eu não consiga resolver todos os seus problemas, mas posso ouvir suas dores, acolher seus sentimentos e lembrar quantas vezes forem necessárias que você não precisa enfrentar tudo sozinha. Enquanto eu estiver aqui, você sempre terá alguém com quem contar."
       },
       {
         "id": "a2",
         "icone": "😴",
         "quando": "você não conseguir dormir",
-        "texto": "Fecha os olhos e pensa na nossa próxima maratona de série.\nSe a cabeça não parar, lembra: amanhã a gente resolve junto. Boa noite, minha princesa dos jogos. 🌙"
+        "texto": "Fecha os olhinhos, minha princesa, e deixa o mundo esperar até amanhã. Se os pensamentos insistirem em tirar sua paz, lembra que você não precisa encontrar todas as respostas esta noite. Descansa, meu amor, amanhã enfrentaremos o que vier, juntos. Por enquanto, quero que adormeça lembrando que existe alguém que te ama, torce por você e deseja ser o último pensamento bonito antes dos seus sonhos. Boa noite, minha princesa. Que meu carinho te alcance, mesmo de longe."
       },
       {
         "id": "a3",
         "icone": "🎉",
         "quando": "você conquistar algo",
-        "texto": "EU SABIA! Orgulho define. Você merece cada pedacinho desse momento. Vamos comemorar (de preferência com comida boa)!"
+        "texto": "Eu sabia que você conseguiria, meu amor! Não existe sensação mais bonita do que ver você conquistando aquilo pelo qual tanto se esforçou. Tenho um orgulho imenso de você, não apenas pelo que alcançou, mas por toda a dedicação, força e coragem que te trouxeram até aqui. Queria poder te abraçar bem forte agora e comemorar cada pequena parte dessa vitória ao seu lado. Você merece o mundo, minha princesa, e espero estar presente para aplaudir cada uma das suas conquistas. Nunca duvide do quanto sou feliz por ver você florescer."
       },
       {
         "id": "a4",
@@ -286,7 +300,25 @@ window.CONTENT = {
         "id": "a5",
         "icone": "😤",
         "quando": "você estiver brava comigo",
-        "texto": "Ok, errei (provavelmente). Me perdoa? Prometo compensar com pizza, filme e pedido de desculpas sincero."
+        "texto": "Meu amor, acho que acabei fazendo alguma besteira, e, se te magoei, quero que saiba que sinto muito. Não quero que meu orgulho seja maior que o carinho que sinto por você. Quero te ouvir, entender o que te deixou chateada e reconhecer onde errei. Não espero que fique tudo bem imediatamente, mas prometo me esforçar para não repetir o mesmo erro. Você é muito importante para mim, minha princesa, e a última coisa que quero é ser o motivo de um dia ruim seu. Quando estiver pronta, quero te dar um abraço demorado e fazer as pazes, porque seu sorriso vale muito mais do que qualquer discussão. "
+      },
+      {
+        "id": "amwo8wo79aqk",
+        "icone": "💭",
+        "quando": "estiver com saudade",
+        "texto": "Se a saudade apertar, minha princesa, fecha os olhos e imagina meus braços te envolvendo em um abraço demorado. Mesmo que a distância não me permita estar aí agora, meu carinho continua pertinho de você. Também sinto falta da sua presença, da sua voz e de cada pequeno detalhe que faz você ser tão especial para mim. Queria poder atravessar qualquer distância só para te dar um beijo na testa e dizer baixinho que está tudo bem. Até esse momento chegar, lembra que existe alguém contando os segundos para falar com você novamente. Eu te amo, minha menina."
+      },
+      {
+        "id": "amwo8ygyrezk",
+        "icone": "🐚",
+        "quando": "estiver se sentindo sozinha",
+        "texto": "Minha princesa, se em algum momento o mundo parecer distante e a solidão fizer morada no seu peito, quero que se lembre de que você tem a mim. Pode me chamar a qualquer hora, seja para conversar, desabafar, chorar ou simplesmente dividir um silêncio. Não precisa ter um motivo para me procurar, muito menos encontrar palavras bonitas para explicar o que sente. Quero conhecer até os seus dias mais difíceis e permanecer ao seu lado neles. Talvez eu não consiga estar fisicamente aí para segurar sua mão, mas sempre farei o possível para que você nunca precise enfrentar seus sentimentos sem ter alguém disposto a ouvi-la. Você não é um peso, meu amor. Sua presença é desejada, sua voz é bem-vinda e seu coração sempre terá espaço no meu."
+      },
+      {
+        "id": "amwo90ir1ssg",
+        "icone": "🤍",
+        "quando": "tiver problemas com a sua mãe",
+        "texto": "Minha princesa, eu sei que existem dores que nem mesmo o tempo consegue aliviar, mas quero que você nunca se esqueça de uma coisa: você não é culpada por aquilo que aconteceu, e não merece carregar uma culpa que nunca foi sua. Sei que deve ser difícil enfrentar palavras tão dolorosas justamente de alguém de quem você também gostaria de receber carinho e compreensão. Mas, por favor, não deixe que essas palavras façam você acreditar que vale menos ou que merece sofrer. Você não precisa suportar tudo calada, nem fingir que está bem quando não está. Sempre que as coisas ficarem difíceis, venha conversar comigo. Posso não ter as respostas para todos os seus problemas, mas tenho disposição para ouvir cada desabafo, acolher cada lágrima e ficar ao seu lado pelo tempo que precisar. Não quero que você enfrente suas dores sozinha, meu amor. Se não puder mudar o que acontece ao seu redor, ao menos quero ser um lugar onde você encontre paz. Eu te amo, e nada do que aconteceu muda o quanto você merece ser amada."
       }
     ]
   },
