@@ -253,32 +253,8 @@ window.CONTENT = {
     ]
   },
   "cartas": {
-    "cartas": [
-      {
-        "id": "c1",
-        "titulo": "Pra você ler quando quiser",
-        "data": "2025-03-14",
-        "texto": "Mari,\n\nNão sei fazer discurso, então vou fazer do jeito que sei: dizendo a verdade.\n\nVocê deixou minha vida mais colorida, mais engraçada e bem mais corajosa. Tudo o que eu quero é continuar escolhendo você, todos os dias, nos dias fáceis e nos difíceis também.\n\nObrigado por existir do meu lado.\n\nCom todo o meu carinho,\nGui"
-      },
-      {
-        "id": "c2",
-        "titulo": "Sobre ontem, hoje e amanhã",
-        "data": "2025-09-02",
-        "texto": "Mari,\n\nOntem a gente era dois desconhecidos com gostos parecidos.\nHoje a gente é time.\nAmanhã eu só quero que continue assim: com música no fone, risada fácil e a certeza de que a gente se escolhe.\n\nTe amo mais do que cabe nesta carta.\n\nGui"
-      }
-    ],
+    "cartas": [],
     "motivos": [
-      "Seu jeito de rir quando acha que ninguém tá vendo.",
-      "Você chora com filme e finge que não.",
-      "Você sabe o nome de todos os personagens de tudo.",
-      "Seu abraço resolve qualquer dia ruim.",
-      "Você me escuta de verdade.",
-      "Você é corajosa até quando tem medo.",
-      "Seu gosto musical é perfeito.",
-      "Você me faz querer ser melhor.",
-      "Você transforma bobeira em memória.",
-      "Do seu lado, o silêncio é confortável.",
-      "Você é a minha pessoa favorita pra jogar, assistir e existir.",
       "Porque é você."
     ],
     "abraQuando": [
