@@ -382,12 +382,6 @@ window.CONTENT = {
       "descricao": "Com direito a bilhetinho."
     },
     {
-      "id": "k5",
-      "icone": "🫂",
-      "titulo": "Abraço de 10 minutos",
-      "descricao": "Sem soltar e sem olhar o celular."
-    },
-    {
       "id": "k6",
       "icone": "🌹",
       "titulo": "Um encontro surpresa",
@@ -396,19 +390,14 @@ window.CONTENT = {
   ],
   "mural": [
     {
-      "autor": "Gui",
+      "autor": "Gu",
       "cor": "rosa",
       "texto": "Você é o meu lugar favorito."
     },
     {
-      "autor": "Seus amigos",
-      "cor": "turq",
-      "texto": "Vocês dois juntos são hilários!"
-    },
-    {
-      "autor": "Gui",
+      "autor": "Gu",
       "cor": "creme",
-      "texto": "Lembra de beber água hoje! 💧"
+      "texto": "Eu te amo"
     },
     {
       "autor": "Futuro nós",
@@ -416,34 +405,29 @@ window.CONTENT = {
       "texto": "Obrigado por não desistirem um do outro."
     },
     {
-      "autor": "Gui",
+      "autor": "Gu",
       "cor": "rosa",
-      "texto": "Se tiver um dia ruim, me chama."
-    },
-    {
-      "autor": "Sua família",
-      "cor": "turq",
-      "texto": "Ele cuida bem de você. Aprovado!"
+      "texto": "Você é meu luar"
     }
   ],
   "eggs": {
     "konami": {
       "titulo": "você achou um segredo!",
-      "texto": "Só quem ama jogo de verdade conhece esse código. 🎮\nPrêmio: um beijo surpresa, a qualquer momento que você quiser."
+      "texto": "Parabéns menina esperta, achou o erro do código. Diga para mim que achou o segredo junto com a palavra \"abelhuda\" para realizar qualquer pedido."
     },
     "toqueTitulo": {
       "titulo": "ei, você tá curiosa!",
-      "texto": "Tocar sete vezes no coração tem recompensa: eu te amo mais um pouco hoje. ♥"
+      "texto": "Tocar sete vezes no coração tem recompensa. eu te amo. ♥"
     },
     "falas": {
       "ele": [
         "oi, sou eu!",
-        "esse é o Gui!",
+        "esse é o Gu!",
         "me dá um abraço?"
       ],
       "ela": [
         "oi, amor!",
-        "essa é a minha namorada favorita",
+        "essa é minha princesa ok",
         "💗"
       ]
     }
