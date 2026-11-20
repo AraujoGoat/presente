@@ -456,97 +456,44 @@ window.CONTENT = {
   },
   "musicas": {
     "spotify": {
-      "titulo": "nossa playlist",
-      "url": "",
-      "descricao": "As músicas que os dois amam ♡"
+      "titulo": "Entrelinhas",
+      "url": "https://open.spotify.com/playlist/5cDFcOrn82ZAZr0loTUNhK?si=nm-X0xBFT4C7voA5NfPDOg%0A",
+      "descricao": "Only ours"
     },
     "nossaMusica": {
-      "titulo": "(troque pela música de vocês)",
-      "artista": "artista",
-      "porque": "Escreva aqui por que essa música é a de vocês.",
+      "titulo": "Legendary Lovers",
+      "artista": "Katy Perry ",
+      "porque": "É nossa e cabo.",
       "youtube": "",
       "link": ""
     },
     "artistas": [
       {
-        "id": "melanie",
-        "nome": "Melanie Martinez",
-        "icone": "🍼",
-        "cor": "rosa",
-        "descricao": "Doce por fora, sombria por dentro. Universo cheio de brinquedos, contos de fada tortos e refrões que grudam.",
-        "porque": "Você canta cada letra como se estivesse contando um segredo.",
-        "faixas": [
-          {
-            "titulo": "Pity Party",
-            "album": "Cry Baby",
-            "porque": "A que você canta no último volume."
-          },
-          {
-            "titulo": "Dollhouse",
-            "album": "Cry Baby",
-            "porque": "Seu jeito de cantar o refrão é o melhor."
-          },
-          {
-            "titulo": "Mad Hatter",
-            "album": "Cry Baby",
-            "porque": "Tem a sua cara em dia de bom humor."
-          },
-          {
-            "titulo": "Carousel",
-            "album": "Cry Baby",
-            "porque": "Perfeita pra dançar sozinha no quarto."
-          }
-        ]
-      },
-      {
-        "id": "alexg",
+        "id": "armwo9s5thot6",
         "nome": "Alex G",
-        "icone": "🎸",
+        "icone": "🎤",
         "cor": "azul",
-        "descricao": "Sons caseiros, guitarras meio tortas e letras que parecem diário. Música pra ouvir de fone, olhando pro nada.",
-        "porque": "Você me apresentou e agora eu não paro de ouvir.",
-        "faixas": [
-          {
-            "titulo": "Gretel",
-            "album": "House of Sugar",
-            "porque": "Música de dia nublado."
-          },
-          {
-            "titulo": "Headlights",
-            "album": "Rocket",
-            "porque": "Linda e estranha, como você."
-          },
-          {
-            "titulo": "Treehouse",
-            "album": "House of Sugar",
-            "porque": "Suave e boa pra viagem."
-          }
-        ]
+        "descricao": "",
+        "porque": "",
+        "faixas": []
       },
       {
-        "id": "bea",
+        "id": "armwo9t5j9ynb",
+        "nome": "Melanie Martinez ",
+        "icone": "🤍",
+        "cor": "azul",
+        "descricao": "",
+        "porque": "",
+        "faixas": []
+      },
+      {
+        "id": "armwo9w3cl738",
         "nome": "Beabadoobee",
-        "icone": "🌼",
-        "cor": "turq",
-        "descricao": "Indie fofo, nostálgico e cheio de guitarra. Parece uma conversa com a melhor amiga numa tarde de sol.",
-        "porque": "Toda vez que toca eu lembro do seu sorriso.",
-        "faixas": [
-          {
-            "titulo": "Coffee",
-            "album": "single",
-            "porque": "Trilha sonora de manhã preguiçosa."
-          },
-          {
-            "titulo": "Glue Song",
-            "album": "Beatopia",
-            "porque": "Uma das mais fofas, a gente combina."
-          },
-          {
-            "titulo": "Care",
-            "album": "Fake It Flowers",
-            "porque": "Pra cantar junto e esquecer o mundo."
-          }
-        ]
+        "icone": "💫",
+        "cor": "azul",
+        "descricao": "",
+        "porque": "",
+        "faixas": []
       }
     ]
   }
