@@ -609,7 +609,11 @@ if (typeof window !== 'undefined') window.PixelAvatar = PixelAvatar;
       try { const t = await decifrar(s.cifrado, i.value); s.texto = t; s.senha = i.value.trim(); delete s.cifrado; mudou(); toast('carta aberta! ✔'); telaSecao(SEC.find(x => x.id === 'segredo')); }
       catch(e){ toast('palavra errada 🤔'); }
     } }, '🔓 abrir carta pra editar');
-    box.append(i, b); return box;
+    const n = h('button', { class: 'btn vinho', style: 'margin-top:8px', onclick: () => {
+      if (!confirm('Isso APAGA a carta cifrada antiga e deixa você escrever uma nova do zero. Continuar?')) return;
+      delete s.cifrado; s.texto = ''; s.senha = ''; mudou(); toast('pode escrever a carta nova ✍️'); telaSecao(SEC.find(x => x.id === 'segredo'));
+    } }, '✍️ esqueci a palavra / escrever carta nova');
+    box.append(i, b, h('div', { class: 'sub', style: 'margin-top:8px', html: 'Esqueceu a palavra secreta? Use o botão abaixo: a carta antiga é descartada e você escreve outra.' }), n); return box;
   }
 
   /* ======================= GITHUB ======================= */
@@ -664,6 +668,7 @@ if (typeof window !== 'undefined') window.PixelAvatar = PixelAvatar;
     const P = JSON.parse(JSON.stringify(D)), s = P.segredo;
     if (s){
       if (s.senha && s.texto){ s.cifrado = await cifrar(s.texto, s.senha); delete s.texto; delete s.senha; }
+      else if (s.cifrado && s.texto){ delete s.cifrado; delete s.senha; }
       else if (s.cifrado){ delete s.texto; delete s.senha; }
       else { delete s.senha; }
     }
