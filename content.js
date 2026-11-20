@@ -324,40 +324,22 @@ window.CONTENT = {
   },
   "linha": [
     {
-      "data": "2024-03-14",
-      "icone": "💘",
-      "titulo": "O começo",
-      "texto": "O dia em que a gente oficializou o que o coração já sabia."
+      "data": "2026-11-03",
+      "icone": "💗",
+      "titulo": "Quando nos conhecemos",
+      "texto": "O melhor dia da minha vida."
     },
     {
-      "data": "2024-03-30",
-      "icone": "🌳",
-      "titulo": "Primeiro rolê de verdade",
-      "texto": "Nervoso, perdido e feliz."
+      "data": "2026-11-10",
+      "icone": "💗",
+      "titulo": "Quando começamos a namorar (casamos)",
+      "texto": ""
     },
     {
-      "data": "2024-07-02",
-      "icone": "🎮",
-      "titulo": "Primeira maratona de jogo",
-      "texto": "Terminou de madrugada. Valeu cada minuto."
-    },
-    {
-      "data": "2024-12-28",
-      "icone": "🌊",
-      "titulo": "Primeira viagem",
-      "texto": "Sol, mar e muita risada."
-    },
-    {
-      "data": "2025-03-14",
-      "icone": "🎂",
-      "titulo": "1 ano de nós",
-      "texto": "Um ano. Parece que foi ontem e que sempre foi assim."
-    },
-    {
-      "data": "2026-03-14",
-      "icone": "💍",
-      "titulo": "2 anos de nós",
-      "texto": "E o melhor ainda tá por vir."
+      "data": "2026-11-11",
+      "icone": "💗",
+      "titulo": "O primeiro \"te amo\"",
+      "texto": ""
     }
   ],
   "gostos": {
