@@ -124,7 +124,7 @@ window.CONTENT = {
     ]
   },
   "player": {
-    "tocando": "Melanie Martinez — Pity Party"
+    "tocando": "Melanie Martinez — Test Me"
   },
   "poemas": [
     {
@@ -136,10 +136,45 @@ window.CONTENT = {
     },
     {
       "id": "pmwo72bro2xk",
-      "titulo": "Novo poema",
+      "titulo": "Cosmos",
+      "data": "2026-11-17",
+      "humor": "☄️",
+      "texto": "Nunca pude contemplar teus olhos por completo, Mas confesso que esse é um desejo que guardo no peito. Pois, mesmo com tão pouco que pude enxergar, Vi um universo inteiro onde me perdi sem hesitar.\n\nEncontrei planetas, sistemas e constelações, Buracos negros, poeiras cósmicas e milhões de estrelas em explosões. Havia tanta beleza que mal pude compreender, E pensar que tudo isso existe em um olhar que ainda quero conhecer.\n\nImagino que, ao vê-los por inteiro, perderia a direção, Como quem atravessa galáxias sem encontrar explicação. Pois se com tão pouco já me fizeste viajar, O que será de mim quando puder teus olhos contemplar?"
+    },
+    {
+      "id": "pmwo7bjrxg3c",
+      "titulo": "Oscilando ",
+      "data": "2026-11-18",
+      "humor": "💫",
+      "texto": "Teus cachos são como pequenas oscilações, Vão e vêm, desenhando suas próprias direções. Sobem e descem, sem pressa de obedecer, Cada mecha escolhe sozinha onde quer permanecer.\n\nAh, garota, que belo cabelo tu tens, Há tanta beleza em cada curva que ele contém. E, quando os vejo, começo a imaginar: Será que entre meus dedos teus cachos iriam se enrolar?\n\nSerá que me deixariam neles passear, Enquanto, com carinho, começo a te abraçar? E, se a noite esquentasse e o desejo nos envolvesse, Será que teus cachos acompanhariam cada movimento que acontecesse?\n"
+    },
+    {
+      "id": "pmwo7cys4xa9",
+      "titulo": "Melodia",
       "data": "2026-11-19",
-      "humor": "💗",
-      "texto": ""
+      "humor": "🐚",
+      "texto": "Meu bem, desde a primeira vez que ouvi tua voz, Ela ganhou um espaço que hoje existe entre nós. Não há um dia sequer em que eu não venha imaginar, Como seria acordar contigo e tua voz escutar.\n\nQueria teu bom-dia ao despertar, Teus sussurros e carinhos antes mesmo de levantar. E, quando a noite trouxesse outro tipo de calor, Ouvir teus gemidos se misturando aos sussurros de amor.\n\nTua voz tem algo que não sei explicar, Um doce encanto que me faz querer escutar. E que inveja tenho de quem pode ouvi-la todo dia, Desfrutando de perto dessa tão bela melodia.\n\nSe mil canções disputassem minha atenção, Tua voz ainda seria minha predileção. Pois, entre todos os sons que a vida pode oferecer, Não existe música mais bonita do que ouvir você.\n"
+    },
+    {
+      "id": "pmwo7jlqfea4",
+      "titulo": "Seu príncipe ",
+      "data": "2026-11-15",
+      "humor": "👑",
+      "texto": "Você não imagina o quanto teu carinho me faz bem, Como cada gesto teu me conquista sem perceber também. Um simples “eu te amo” já me deixa apaixonado, E qualquer demonstração de amor me faz ficar todo encantado.\n\nMas quando me chama de príncipe, ah, meu bem, Parece que o mundo inteiro deixa de existir também. Me imagino deitado nas nuvens, contemplando o céu, Com a cabeça em teu colo, num momento só nosso, doce como mel.\n\nE enquanto observo as estrelas, sem pressa de levantar, Sinto teus dedos em meus cabelos, me fazendo relaxar. Pois, entre tantos lugares onde eu poderia estar, Não existe céu mais bonito que o teu colo para descansar."
+    },
+    {
+      "id": "pmwo7ni0y5jm",
+      "titulo": "Minha princesa",
+      "data": "2026-11-17",
+      "humor": "👑",
+      "texto": "Minha princesa, enfrentaria o mundo inteiro por você,\nE até contra mil exércitos lutaria para te proteger.\nTreinaria por anos, sem jamais me cansar,\nPara ser o melhor cavaleiro e tua mão conquistar.\n\nMataria mil dragões, cruzaria qualquer fronteira,\nSó para receber do rei a bênção de ser teu cavaleiro a vida inteira.\nJuraria diante dos deuses, com toda a minha devoção,\nAmar-te e proteger-te, mesmo em pedaços pelo chão.\n\nE se Deus te levasse para além do meu olhar,\nPercorreria todos os mundos até te reencontrar.\nPois nem o tempo, nem a morte, nem o fim da eternidade\nSeriam capazes de apagar essa minha lealdade.\n\nVocê é minha princesa, meu mais precioso amor,\nE serei sempre teu cavaleiro, teu abrigo e protetor.\nAmarei você até minha alma deixar de existir,\nPois nem mesmo o fim do mundo me faria desistir."
+    },
+    {
+      "id": "pmwo81g412bw",
+      "titulo": "Futuro",
+      "data": "2026-11-18",
+      "humor": "🌻",
+      "texto": "Meu maior sonho é ser pai um dia,\nVer florescer uma vida que eu tanto amaria.\nTer um pedacinho de mim pelo mundo a caminhar,\nCriando suas próprias raízes, descobrindo seu lugar.\n\nQuero acompanhar seus passos, vê-lo crescer,\nE sentir um orgulho imenso de tudo o que vier a ser.\nMas, mais que esse sonho, existe um desejo meu:\nConstruir essa família ao lado teu.\n\nQuero que sejas a mãe dos filhos que vou amar,\nO pilar da nossa casa, nosso porto e nosso lar.\nQue tua força e teu carinho sejam nossa inspiração,\nE que nossos pequenos cresçam cercados de amor e união.\n\nQuero envelhecer contigo, vendo nossa história florescer,\nE, em cada sorriso dos nossos filhos, um pouco de nós reconhecer.\nPois não sonho apenas em ter uma família para chamar de minha,\nSonho em construir esse lar contigo, minha eterna companhia."
     }
   ],
   "galeria": {
